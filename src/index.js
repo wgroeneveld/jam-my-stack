@@ -1,5 +1,7 @@
-const parseMastoFeed = require('./masto-feed-parser')
+const { parseMastoFeed } = require('./masto-feed-parser')
+const { widgetify } = require('./goodreads-widgetify.js')
 
 module.exports = {
-	parseMastoFeed
+	parseMastoFeed,
+	goodreadsWidgetify: widgetify
 };
