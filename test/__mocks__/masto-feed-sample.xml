@@ -1,0 +1,683 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed
+  xmlns="http://www.w3.org/2005/Atom"
+  xmlns:thr="http://purl.org/syndication/thread/1.0"
+  xmlns:activity="http://activitystrea.ms/spec/1.0/"
+  xmlns:poco="http://portablecontacts.net/spec/1.0"
+  xmlns:ostatus="http://ostatus.org/schema/1.0">
+
+  <id>https://chat.brainbaking.com/users/wouter/feed.atom</id>
+  <title>wouter's timeline</title>
+  <updated>2021-03-02T16:18:46</updated>
+  <logo>https://chat.brainbaking.com/media/f39bcd85-5098-45e2-b395-e274b712d512/headshot_2020.jpg</logo>
+  <link rel="self" href="https://chat.brainbaking.com/users/wouter/feed.atom" type="application/atom+xml"/>
+
+  <author>
+  <id>https://chat.brainbaking.com/users/wouter</id>
+  <activity:object>http://activitystrea.ms/schema/1.0/person</activity:object>
+  <uri>https://chat.brainbaking.com/users/wouter</uri>
+  <poco:preferredUsername>wouter</poco:preferredUsername>
+  <poco:displayName>Wouter Groeneveld</poco:displayName>
+  <poco:note>Level 35 Brain Baker. Loving the smell of freshly baked thoughts (and bread) in the morning 🍞. Sometimes convincing others to bake their brain (and bread) too 🧠. </poco:note>
+  <summary>Level 35 Brain Baker. Loving the smell of freshly baked thoughts (and bread) in the morning 🍞. Sometimes convincing others to bake their brain (and bread) too 🧠. </summary>
+  <name>wouter</name>
+  <link rel="avatar" href="https://chat.brainbaking.com/media/f39bcd85-5098-45e2-b395-e274b712d512/headshot_2020.jpg"/>
+  
+    <link rel="header" href="https://chat.brainbaking.com/media/3399cd78-4fd4-40ab-a174-c7805576a826/boekcover2.jpg"/>
+  
+  
+    <ap_enabled>true</ap_enabled>
+  
+</author>
+
+
+  
+    <link rel="next" href="https://chat.brainbaking.com/users/wouter/feed.atom?max_id=A4fIjNa6N1OJmaSMAS" type="application/atom+xml"/>
+  
+
+  
+  <entry>
+  <activity:object-type>http://activitystrea.ms/schema/1.0/note</activity:object-type>
+  <activity:verb>http://activitystrea.ms/schema/1.0/post</activity:verb>
+  <id>https://chat.brainbaking.com/objects/2e58289c-f5f0-415c-b2e1-62c74662aa16</id>
+  <title>@StampedingLonghorn I tried to chase him away, but you know how that turned out... 😼 There&amp;#39;s ...</title>
+  <content type="html">&lt;span class=&quot;h-card&quot;&gt;&lt;a class=&quot;u-url mention&quot; data-user=&quot;A4nwg4LYyh4WgrJOXg&quot; href=&quot;https://social.linux.pizza/@StampedingLonghorn&quot; rel=&quot;ugc&quot;&gt;@&lt;span&gt;StampedingLonghorn&lt;/span&gt;&lt;/a&gt;&lt;/span&gt; I tried to chase him away, but you know how that turned out... 😼 There&amp;#39;s even cat hair inside the cases... (to be clear: also unintentional)</content>
+  <published>2021-03-02T16:18:46.658056Z</published>
+  <updated>2021-03-02T16:18:46.658056Z</updated>
+  <ostatus:conversation ref="tag:mastodon.social,2021-03-01:objectId=224637732:objectType=Conversation">
+    tag:mastodon.social,2021-03-01:objectId=224637732:objectType=Conversation
+  </ostatus:conversation>
+  <link href="tag:mastodon.social,2021-03-01:objectId=224637732:objectType=Conversation" rel="ostatus:conversation"/>
+
+  
+    <summary></summary>
+  
+
+  
+    <link type="application/atom+xml" href='https://chat.brainbaking.com/objects/2e58289c-f5f0-415c-b2e1-62c74662aa16' rel="self"/>
+    <link type="text/html" href='https://chat.brainbaking.com/objects/2e58289c-f5f0-415c-b2e1-62c74662aa16' rel="alternate"/>
+  
+
+  
+
+  
+
+  
+    <thr:in-reply-to ref='https://social.linux.pizza/users/StampedingLonghorn/statuses/105821099684887793' href='https://social.linux.pizza/users/StampedingLonghorn/statuses/105821099684887793'/>
+  
+
+  
+    
+      
+        <link rel="mentioned" ostatus:object-type="http://activitystrea.ms/schema/1.0/person" href="https://social.linux.pizza/users/StampedingLonghorn"/>
+      
+    
+  
+    
+      <link rel="mentioned" ostatus:object-type="http://activitystrea.ms/schema/1.0/collection" href="http://activityschema.org/collection/public"/>
+    
+  
+    
+      
+    
+  
+    
+      
+        <link rel="mentioned" ostatus:object-type="http://activitystrea.ms/schema/1.0/person" href="https://chat.brainbaking.com/users/wouter"/>
+      
+    
+  
+
+  
+</entry>
+
+  
+  <entry>
+  <activity:object-type>http://activitystrea.ms/schema/1.0/note</activity:object-type>
+  <activity:verb>http://activitystrea.ms/schema/1.0/post</activity:verb>
+  <id>https://chat.brainbaking.com/objects/e31b1547-31b5-4a35-8c6d-535cdaec4725</id>
+  <title>@StampedingLonghorn @256 Don&amp;#39;t forget the cleverly hidden Roland MT-32, a majestic piece of p...</title>
+  <content type="html">&lt;span class=&quot;h-card&quot;&gt;&lt;a class=&quot;u-url mention&quot; data-user=&quot;A4nwg4LYyh4WgrJOXg&quot; href=&quot;https://social.linux.pizza/@StampedingLonghorn&quot; rel=&quot;ugc&quot;&gt;@&lt;span&gt;StampedingLonghorn&lt;/span&gt;&lt;/a&gt;&lt;/span&gt; &lt;span class=&quot;h-card&quot;&gt;&lt;a class=&quot;u-url mention&quot; data-user=&quot;A4kSMHDHqoHahjCthg&quot; href=&quot;https://mastodon.social/@256&quot; rel=&quot;ugc&quot;&gt;@&lt;span&gt;256&lt;/span&gt;&lt;/a&gt;&lt;/span&gt; Don&amp;#39;t forget the cleverly hidden Roland MT-32, a majestic piece of pre-MIDI standardized era synthesizer. What else would you use to run Sierra Online games, and monkey1? I really need one for my 486... &lt;a href=&quot;https://brainbaking.com/post/2021/02/my-retro-desktop-setup/&quot; rel=&quot;ugc&quot;&gt;https://brainbaking.com/post/2021/02/my-retro-desktop-setup/&lt;/a&gt;</content>
+  <published>2021-03-02T16:13:27.921888Z</published>
+  <updated>2021-03-02T16:13:27.921888Z</updated>
+  <ostatus:conversation ref="tag:mastodon.social,2021-03-01:objectId=224637732:objectType=Conversation">
+    tag:mastodon.social,2021-03-01:objectId=224637732:objectType=Conversation
+  </ostatus:conversation>
+  <link href="tag:mastodon.social,2021-03-01:objectId=224637732:objectType=Conversation" rel="ostatus:conversation"/>
+
+  
+    <summary></summary>
+  
+
+  
+    <link type="application/atom+xml" href='https://chat.brainbaking.com/objects/e31b1547-31b5-4a35-8c6d-535cdaec4725' rel="self"/>
+    <link type="text/html" href='https://chat.brainbaking.com/objects/e31b1547-31b5-4a35-8c6d-535cdaec4725' rel="alternate"/>
+  
+
+  
+
+  
+
+  
+    <thr:in-reply-to ref='https://social.linux.pizza/users/StampedingLonghorn/statuses/105821068976933063' href='https://social.linux.pizza/users/StampedingLonghorn/statuses/105821068976933063'/>
+  
+
+  
+    
+      
+        <link rel="mentioned" ostatus:object-type="http://activitystrea.ms/schema/1.0/person" href="https://social.linux.pizza/users/StampedingLonghorn"/>
+      
+    
+  
+    
+      <link rel="mentioned" ostatus:object-type="http://activitystrea.ms/schema/1.0/collection" href="http://activityschema.org/collection/public"/>
+    
+  
+    
+      
+        <link rel="mentioned" ostatus:object-type="http://activitystrea.ms/schema/1.0/person" href="https://mastodon.social/users/256"/>
+      
+    
+  
+    
+      
+    
+  
+    
+      
+        <link rel="mentioned" ostatus:object-type="http://activitystrea.ms/schema/1.0/person" href="https://chat.brainbaking.com/users/wouter"/>
+      
+    
+  
+
+  
+</entry>
+
+  
+  <entry>
+  <activity:object-type>http://activitystrea.ms/schema/1.0/note</activity:object-type>
+  <activity:verb>http://activitystrea.ms/schema/1.0/post</activity:verb>
+  <id>https://chat.brainbaking.com/objects/feb772dc-ffec-45c9-be75-51d56c5457ff</id>
+  <title>@aussocialadmin Great! I didn&amp;#39;t even know https://joinmobilizon.org/ existed, thanks for shar...</title>
+  <content type="html">&lt;span class=&quot;h-card&quot;&gt;&lt;a class=&quot;u-url mention&quot; data-user=&quot;A4nTeVFn4QjKtHVqpU&quot; href=&quot;https://aus.social/@aussocialadmin&quot; rel=&quot;ugc&quot;&gt;@&lt;span&gt;aussocialadmin&lt;/span&gt;&lt;/a&gt;&lt;/span&gt; Great! I didn&amp;#39;t even know &lt;a href=&quot;https://joinmobilizon.org/&quot; rel=&quot;ugc&quot;&gt;https://joinmobilizon.org/&lt;/a&gt; existed, thanks for sharing! So many superb alternatives. If only the userbase would follow...</content>
+  <published>2021-03-02T12:18:54.215912Z</published>
+  <updated>2021-03-02T12:18:54.215912Z</updated>
+  <ostatus:conversation ref="tag:aus.social,2021-03-02:objectId=9890041:objectType=Conversation">
+    tag:aus.social,2021-03-02:objectId=9890041:objectType=Conversation
+  </ostatus:conversation>
+  <link href="tag:aus.social,2021-03-02:objectId=9890041:objectType=Conversation" rel="ostatus:conversation"/>
+
+  
+    <summary></summary>
+  
+
+  
+    <link type="application/atom+xml" href='https://chat.brainbaking.com/objects/feb772dc-ffec-45c9-be75-51d56c5457ff' rel="self"/>
+    <link type="text/html" href='https://chat.brainbaking.com/objects/feb772dc-ffec-45c9-be75-51d56c5457ff' rel="alternate"/>
+  
+
+  
+
+  
+
+  
+    <thr:in-reply-to ref='https://aus.social/users/aussocialadmin/statuses/105817435308293091' href='https://aus.social/users/aussocialadmin/statuses/105817435308293091'/>
+  
+
+  
+    
+      
+        <link rel="mentioned" ostatus:object-type="http://activitystrea.ms/schema/1.0/person" href="https://aus.social/users/aussocialadmin"/>
+      
+    
+  
+    
+      <link rel="mentioned" ostatus:object-type="http://activitystrea.ms/schema/1.0/collection" href="http://activityschema.org/collection/public"/>
+    
+  
+    
+      
+    
+  
+    
+      
+        <link rel="mentioned" ostatus:object-type="http://activitystrea.ms/schema/1.0/person" href="https://chat.brainbaking.com/users/wouter"/>
+      
+    
+  
+
+  
+</entry>
+
+  
+  <entry>
+  <activity:object-type>http://activitystrea.ms/schema/1.0/note</activity:object-type>
+  <activity:verb>http://activitystrea.ms/schema/1.0/post</activity:verb>
+  <id>https://chat.brainbaking.com/objects/77a3ecfb-47e1-4d7a-a24a-8b779d80a8ac</id>
+  <title>I pulled the Google plug and installed LineageOS: https://brainbaking.com/post/2021/03/getting-ri...</title>
+  <content type="html">I pulled the Google plug and installed LineageOS: &lt;a href=&quot;https://brainbaking.com/post/2021/03/getting-rid-of-tracking-using-lineageos/&quot; rel=&quot;ugc&quot;&gt;https://brainbaking.com/post/2021/03/getting-rid-of-tracking-using-lineageos/&lt;/a&gt; Very impressed so far! Also rely on my own CalDAV server to replace GCalendar. Any others here running &lt;a class=&quot;hashtag&quot; data-tag=&quot;lineageos&quot; href=&quot;https://chat.brainbaking.com/tag/lineageos&quot; rel=&quot;tag ugc&quot;&gt;#lineageos&lt;/a&gt; for privacy reasons?</content>
+  <published>2021-03-01T19:03:35.273023Z</published>
+  <updated>2021-03-01T19:03:35.273023Z</updated>
+  <ostatus:conversation ref="https://chat.brainbaking.com/contexts/ff9aa62e-3357-41ad-951d-15f6ad506424">
+    https://chat.brainbaking.com/contexts/ff9aa62e-3357-41ad-951d-15f6ad506424
+  </ostatus:conversation>
+  <link href="https://chat.brainbaking.com/contexts/ff9aa62e-3357-41ad-951d-15f6ad506424" rel="ostatus:conversation"/>
+
+  
+    <summary></summary>
+  
+
+  
+    <link type="application/atom+xml" href='https://chat.brainbaking.com/objects/77a3ecfb-47e1-4d7a-a24a-8b779d80a8ac' rel="self"/>
+    <link type="text/html" href='https://chat.brainbaking.com/objects/77a3ecfb-47e1-4d7a-a24a-8b779d80a8ac' rel="alternate"/>
+  
+
+  
+    <category term="lineageos"></category>
+  
+
+  
+
+  
+
+  
+    
+      <link rel="mentioned" ostatus:object-type="http://activitystrea.ms/schema/1.0/collection" href="http://activityschema.org/collection/public"/>
+    
+  
+    
+      
+    
+  
+    
+      
+        <link rel="mentioned" ostatus:object-type="http://activitystrea.ms/schema/1.0/person" href="https://chat.brainbaking.com/users/wouter"/>
+      
+    
+  
+
+  
+</entry>
+
+  
+  <entry>
+  <activity:object-type>http://activitystrea.ms/schema/1.0/note</activity:object-type>
+  <activity:verb>http://activitystrea.ms/schema/1.0/post</activity:verb>
+  <id>https://chat.brainbaking.com/objects/eceb0da5-f424-4acb-b5ae-65a820d8b1eb</id>
+  <title>@darth_mall Interesting, did you use Bridgy to convert Mastodon posts into webmentions? Many site...</title>
+  <content type="html">&lt;span class=&quot;h-card&quot;&gt;&lt;a class=&quot;u-url mention&quot; data-user=&quot;A4jKa9Q2dIr3nGJlJY&quot; href=&quot;https://vis.social/@darth_mall&quot; rel=&quot;ugc&quot;&gt;@&lt;span&gt;darth_mall&lt;/span&gt;&lt;/a&gt;&lt;/span&gt; Interesting, did you use Bridgy to convert Mastodon posts into webmentions? Many sites seem to use it, but it of course only scans your own Twitter/Masto feed. IMO, this renders it a bit useless unless you&amp;#39;re very popular (😰). Anyone you don&amp;#39;t know could talk about a post on your site, but it won&amp;#39;t be received since these systems do not push webmentions themselves. Furthermore, I do not see anyone manually posting a link at the end of a post - that kind of defeats the purpose. &lt;br&gt;That said, is it working for you?</content>
+  <published>2021-02-28T10:47:37.015143Z</published>
+  <updated>2021-02-28T10:47:37.015143Z</updated>
+  <ostatus:conversation ref="tag:vis.social,2021-01-19:objectId=10184471:objectType=Conversation">
+    tag:vis.social,2021-01-19:objectId=10184471:objectType=Conversation
+  </ostatus:conversation>
+  <link href="tag:vis.social,2021-01-19:objectId=10184471:objectType=Conversation" rel="ostatus:conversation"/>
+
+  
+    <summary></summary>
+  
+
+  
+    <link type="application/atom+xml" href='https://chat.brainbaking.com/objects/eceb0da5-f424-4acb-b5ae-65a820d8b1eb' rel="self"/>
+    <link type="text/html" href='https://chat.brainbaking.com/objects/eceb0da5-f424-4acb-b5ae-65a820d8b1eb' rel="alternate"/>
+  
+
+  
+
+  
+
+  
+    <thr:in-reply-to ref='https://vis.social/users/darth_mall/statuses/105580591640900315' href='https://vis.social/users/darth_mall/statuses/105580591640900315'/>
+  
+
+  
+    
+      
+        <link rel="mentioned" ostatus:object-type="http://activitystrea.ms/schema/1.0/person" href="https://vis.social/users/darth_mall"/>
+      
+    
+  
+    
+      <link rel="mentioned" ostatus:object-type="http://activitystrea.ms/schema/1.0/collection" href="http://activityschema.org/collection/public"/>
+    
+  
+    
+      
+    
+  
+    
+      
+        <link rel="mentioned" ostatus:object-type="http://activitystrea.ms/schema/1.0/person" href="https://chat.brainbaking.com/users/wouter"/>
+      
+    
+  
+
+  
+</entry>
+
+  
+  <entry>
+  <activity:object-type>http://activitystrea.ms/schema/1.0/note</activity:object-type>
+  <activity:verb>http://activitystrea.ms/schema/1.0/post</activity:verb>
+  <id>https://chat.brainbaking.com/objects/fe700d1f-bc60-4707-bed1-45f9dfdf507c</id>
+  <title>Okay, so sending involves Webmention.app and IFTTT to poll my RSS feed (According to https://www....</title>
+  <content type="html">Okay, so sending involves &lt;a href=&quot;http://Webmention.app&quot; rel=&quot;ugc&quot;&gt;Webmention.app&lt;/a&gt; and IFTTT to poll my RSS feed (According to &lt;a href=&quot;https://www.jayeless.net/2021/02/integrating-webmentions-into-hugo.html&quot; rel=&quot;ugc&quot;&gt;https://www.jayeless.net/2021/02/integrating-webmentions-into-hugo.html&lt;/a&gt;). Holy shit. Is it even worth it...</content>
+  <published>2021-02-27T17:00:19.935679Z</published>
+  <updated>2021-02-27T17:00:19.935679Z</updated>
+  <ostatus:conversation ref="https://chat.brainbaking.com/contexts/d3f8a274-a30d-40f7-8c10-6b39fb860fa6">
+    https://chat.brainbaking.com/contexts/d3f8a274-a30d-40f7-8c10-6b39fb860fa6
+  </ostatus:conversation>
+  <link href="https://chat.brainbaking.com/contexts/d3f8a274-a30d-40f7-8c10-6b39fb860fa6" rel="ostatus:conversation"/>
+
+  
+    <summary></summary>
+  
+
+  
+    <link type="application/atom+xml" href='https://chat.brainbaking.com/objects/fe700d1f-bc60-4707-bed1-45f9dfdf507c' rel="self"/>
+    <link type="text/html" href='https://chat.brainbaking.com/objects/fe700d1f-bc60-4707-bed1-45f9dfdf507c' rel="alternate"/>
+  
+
+  
+
+  
+
+  
+    <thr:in-reply-to ref='https://chat.brainbaking.com/objects/0a54f23f-d362-4b12-9d67-3f8a4945d5ae' href='https://chat.brainbaking.com/objects/0a54f23f-d362-4b12-9d67-3f8a4945d5ae'/>
+  
+
+  
+    
+      
+        <link rel="mentioned" ostatus:object-type="http://activitystrea.ms/schema/1.0/person" href="https://chat.brainbaking.com/users/wouter"/>
+      
+    
+  
+    
+      <link rel="mentioned" ostatus:object-type="http://activitystrea.ms/schema/1.0/collection" href="http://activityschema.org/collection/public"/>
+    
+  
+    
+      
+    
+  
+
+  
+</entry>
+
+  
+  <entry>
+  <activity:object-type>http://activitystrea.ms/schema/1.0/note</activity:object-type>
+  <activity:verb>http://activitystrea.ms/schema/1.0/post</activity:verb>
+  <id>https://chat.brainbaking.com/objects/0a54f23f-d362-4b12-9d67-3f8a4945d5ae</id>
+  <title>Trying to wrap my mind around WebMentions and how I could implement them without resorting to a t...</title>
+  <content type="html">Trying to wrap my mind around WebMentions and how I could implement them without resorting to a third-party provider... &lt;a href=&quot;https://sebastiandedeyne.com/adding-webmentions-to-my-blog/&quot; rel=&quot;ugc&quot;&gt;https://sebastiandedeyne.com/adding-webmentions-to-my-blog/&lt;/a&gt; I wonder if a link such as this one would receive a webmention/pingback if I just write about it using Hugo.</content>
+  <published>2021-02-27T16:51:39.103389Z</published>
+  <updated>2021-02-27T16:51:39.103389Z</updated>
+  <ostatus:conversation ref="https://chat.brainbaking.com/contexts/d3f8a274-a30d-40f7-8c10-6b39fb860fa6">
+    https://chat.brainbaking.com/contexts/d3f8a274-a30d-40f7-8c10-6b39fb860fa6
+  </ostatus:conversation>
+  <link href="https://chat.brainbaking.com/contexts/d3f8a274-a30d-40f7-8c10-6b39fb860fa6" rel="ostatus:conversation"/>
+
+  
+    <summary></summary>
+  
+
+  
+    <link type="application/atom+xml" href='https://chat.brainbaking.com/objects/0a54f23f-d362-4b12-9d67-3f8a4945d5ae' rel="self"/>
+    <link type="text/html" href='https://chat.brainbaking.com/objects/0a54f23f-d362-4b12-9d67-3f8a4945d5ae' rel="alternate"/>
+  
+
+  
+
+  
+
+  
+
+  
+    
+      <link rel="mentioned" ostatus:object-type="http://activitystrea.ms/schema/1.0/collection" href="http://activityschema.org/collection/public"/>
+    
+  
+    
+      
+    
+  
+    
+      
+        <link rel="mentioned" ostatus:object-type="http://activitystrea.ms/schema/1.0/person" href="https://chat.brainbaking.com/users/wouter"/>
+      
+    
+  
+
+  
+</entry>
+
+  
+  <entry>
+  <activity:object-type>http://activitystrea.ms/schema/1.0/note</activity:object-type>
+  <activity:verb>http://activitystrea.ms/schema/1.0/post</activity:verb>
+  <id>https://chat.brainbaking.com/objects/f5fd9f27-460c-4984-aaf4-843788b94419</id>
+  <title>Has anyone else noticed posted links on Twitter get re-encoded into t.co URLs in order to gather ...</title>
+  <content type="html">Has anyone else noticed posted links on Twitter get re-encoded into &lt;a href=&quot;http://t.co&quot; rel=&quot;ugc&quot;&gt;t.co&lt;/a&gt; URLs in order to gather even more &amp;#39;insight&amp;#39; data? That said, I&amp;#39;m having trouble finding anyone on the Fediverse... Any hints?</content>
+  <published>2021-02-27T13:25:16.227447Z</published>
+  <updated>2021-02-27T13:25:16.227447Z</updated>
+  <ostatus:conversation ref="https://chat.brainbaking.com/contexts/841dd53f-5578-4cd0-b1d1-1d4f1c5ee124">
+    https://chat.brainbaking.com/contexts/841dd53f-5578-4cd0-b1d1-1d4f1c5ee124
+  </ostatus:conversation>
+  <link href="https://chat.brainbaking.com/contexts/841dd53f-5578-4cd0-b1d1-1d4f1c5ee124" rel="ostatus:conversation"/>
+
+  
+    <summary></summary>
+  
+
+  
+    <link type="application/atom+xml" href='https://chat.brainbaking.com/objects/f5fd9f27-460c-4984-aaf4-843788b94419' rel="self"/>
+    <link type="text/html" href='https://chat.brainbaking.com/objects/f5fd9f27-460c-4984-aaf4-843788b94419' rel="alternate"/>
+  
+
+  
+
+  
+
+  
+
+  
+    
+      <link rel="mentioned" ostatus:object-type="http://activitystrea.ms/schema/1.0/collection" href="http://activityschema.org/collection/public"/>
+    
+  
+    
+      
+    
+  
+    
+      
+        <link rel="mentioned" ostatus:object-type="http://activitystrea.ms/schema/1.0/person" href="https://chat.brainbaking.com/users/wouter"/>
+      
+    
+  
+
+  
+</entry>
+
+  
+  <entry>
+  <activity:object-type>http://activitystrea.ms/schema/1.0/note</activity:object-type>
+  <activity:verb>http://activitystrea.ms/schema/1.0/post</activity:verb>
+  <id>https://chat.brainbaking.com/objects/bd940e2d-12b0-4649-b198-053a49f81d34</id>
+  <title>@laura It did more than helping! I&amp;#39;m slowly but surely taking back my data. Started with Ever...</title>
+  <content type="html">&lt;span class=&quot;h-card&quot;&gt;&lt;a class=&quot;u-url mention&quot; data-user=&quot;A4fIvtjUepzOyQooXg&quot; href=&quot;https://mastodon.laurakalbag.com/@laura&quot; rel=&quot;ugc&quot;&gt;@&lt;span&gt;laura&lt;/span&gt;&lt;/a&gt;&lt;/span&gt; It did more than helping! I&amp;#39;m slowly but surely taking back my data. Started with Evernote -&amp;gt; DEVONThink, got to Gmail -&amp;gt; ProtonMail, and now to Android -&amp;gt; LineageOS. All your fault 😂</content>
+  <published>2021-02-26T18:55:59.556758Z</published>
+  <updated>2021-02-26T18:55:59.556758Z</updated>
+  <ostatus:conversation ref="https://chat.brainbaking.com/contexts/99f45cb3-298b-4b75-b40c-c625d8e073bf">
+    https://chat.brainbaking.com/contexts/99f45cb3-298b-4b75-b40c-c625d8e073bf
+  </ostatus:conversation>
+  <link href="https://chat.brainbaking.com/contexts/99f45cb3-298b-4b75-b40c-c625d8e073bf" rel="ostatus:conversation"/>
+
+  
+    <summary></summary>
+  
+
+  
+    <link type="application/atom+xml" href='https://chat.brainbaking.com/objects/bd940e2d-12b0-4649-b198-053a49f81d34' rel="self"/>
+    <link type="text/html" href='https://chat.brainbaking.com/objects/bd940e2d-12b0-4649-b198-053a49f81d34' rel="alternate"/>
+  
+
+  
+
+  
+
+  
+    <thr:in-reply-to ref='https://mastodon.laurakalbag.com/users/laura/statuses/105798277886464888' href='https://mastodon.laurakalbag.com/users/laura/statuses/105798277886464888'/>
+  
+
+  
+    
+      
+        <link rel="mentioned" ostatus:object-type="http://activitystrea.ms/schema/1.0/person" href="https://mastodon.laurakalbag.com/users/laura"/>
+      
+    
+  
+    
+      <link rel="mentioned" ostatus:object-type="http://activitystrea.ms/schema/1.0/collection" href="http://activityschema.org/collection/public"/>
+    
+  
+    
+      
+    
+  
+    
+      
+        <link rel="mentioned" ostatus:object-type="http://activitystrea.ms/schema/1.0/person" href="https://chat.brainbaking.com/users/wouter"/>
+      
+    
+  
+
+  
+</entry>
+
+  
+  <entry>
+  <activity:object-type>http://activitystrea.ms/schema/1.0/note</activity:object-type>
+  <activity:verb>http://activitystrea.ms/schema/1.0/post</activity:verb>
+  <id>https://chat.brainbaking.com/objects/1bab58d4-5bf3-472e-b268-ae2dd47dd24d</id>
+  <title>Just saying hi @kogakure 👋 getting my feet wet with decentralized “tooting” (although I opted for...</title>
+  <content type="html">&lt;p&gt;Just saying hi &lt;span class=&quot;h-card&quot;&gt;&lt;a class=&quot;u-url mention&quot; data-user=&quot;A4fMTkA13Luczi3SCW&quot; href=&quot;https://mastodon.social/@kogakure&quot; rel=&quot;ugc&quot;&gt;@&lt;span&gt;kogakure&lt;/span&gt;&lt;/a&gt;&lt;/span&gt; 👋 getting my feet wet with decentralized “tooting” (although I opted for Pleroma, less drama to install in my own VPS it seemed)&lt;/p&gt;</content>
+  <published>2021-02-26T12:48:06.664145Z</published>
+  <updated>2021-02-26T12:48:06.664145Z</updated>
+  <ostatus:conversation ref="https://chat.brainbaking.com/contexts/5fbd0215-9e50-4430-99f1-b12cd52b0019">
+    https://chat.brainbaking.com/contexts/5fbd0215-9e50-4430-99f1-b12cd52b0019
+  </ostatus:conversation>
+  <link href="https://chat.brainbaking.com/contexts/5fbd0215-9e50-4430-99f1-b12cd52b0019" rel="ostatus:conversation"/>
+
+  
+    <summary></summary>
+  
+
+  
+    <link type="application/atom+xml" href='https://chat.brainbaking.com/objects/1bab58d4-5bf3-472e-b268-ae2dd47dd24d' rel="self"/>
+    <link type="text/html" href='https://chat.brainbaking.com/objects/1bab58d4-5bf3-472e-b268-ae2dd47dd24d' rel="alternate"/>
+  
+
+  
+
+  
+
+  
+
+  
+    
+      <link rel="mentioned" ostatus:object-type="http://activitystrea.ms/schema/1.0/collection" href="http://activityschema.org/collection/public"/>
+    
+  
+    
+      
+        <link rel="mentioned" ostatus:object-type="http://activitystrea.ms/schema/1.0/person" href="https://mastodon.social/users/kogakure"/>
+      
+    
+  
+    
+      
+    
+  
+    
+      
+        <link rel="mentioned" ostatus:object-type="http://activitystrea.ms/schema/1.0/person" href="https://chat.brainbaking.com/users/wouter"/>
+      
+    
+  
+
+  
+</entry>
+
+  
+  <entry>
+  <activity:object-type>http://activitystrea.ms/schema/1.0/note</activity:object-type>
+  <activity:verb>http://activitystrea.ms/schema/1.0/post</activity:verb>
+  <id>https://chat.brainbaking.com/objects/7b4e207f-47ed-4d2a-913e-9de73a1075c2</id>
+  <title>Hi @laura thanks to your https://laurakalbag.com/what-is-mastodon-and-why-should-i-use-it/ I dipp...</title>
+  <content type="html">&lt;p&gt;Hi &lt;span class=&quot;h-card&quot;&gt;&lt;a class=&quot;u-url mention&quot; data-user=&quot;A4fIvtjUepzOyQooXg&quot; href=&quot;https://mastodon.laurakalbag.com/@laura&quot; rel=&quot;ugc&quot;&gt;@&lt;span&gt;laura&lt;/span&gt;&lt;/a&gt;&lt;/span&gt; thanks to your &lt;a href=&quot;https://laurakalbag.com/what-is-mastodon-and-why-should-i-use-it&quot;&gt;https://laurakalbag.com/what-is-mastodon-and-why-should-i-use-it&lt;/a&gt;/ I dipped my toes into decentralized social networks 😅 FYI The “What’s wrong with Twitter” link on there is broken. Loving what you do so far, you made me reconsider accessibility and privacy features on my own site!&lt;/p&gt;</content>
+  <published>2021-02-26T12:08:52.060973Z</published>
+  <updated>2021-02-26T12:08:52.060973Z</updated>
+  <ostatus:conversation ref="https://chat.brainbaking.com/contexts/99f45cb3-298b-4b75-b40c-c625d8e073bf">
+    https://chat.brainbaking.com/contexts/99f45cb3-298b-4b75-b40c-c625d8e073bf
+  </ostatus:conversation>
+  <link href="https://chat.brainbaking.com/contexts/99f45cb3-298b-4b75-b40c-c625d8e073bf" rel="ostatus:conversation"/>
+
+  
+    <summary></summary>
+  
+
+  
+    <link type="application/atom+xml" href='https://chat.brainbaking.com/objects/7b4e207f-47ed-4d2a-913e-9de73a1075c2' rel="self"/>
+    <link type="text/html" href='https://chat.brainbaking.com/objects/7b4e207f-47ed-4d2a-913e-9de73a1075c2' rel="alternate"/>
+  
+
+  
+
+  
+
+  
+
+  
+    
+      <link rel="mentioned" ostatus:object-type="http://activitystrea.ms/schema/1.0/collection" href="http://activityschema.org/collection/public"/>
+    
+  
+    
+      
+        <link rel="mentioned" ostatus:object-type="http://activitystrea.ms/schema/1.0/person" href="https://mastodon.laurakalbag.com/users/laura"/>
+      
+    
+  
+    
+      
+    
+  
+    
+      
+        <link rel="mentioned" ostatus:object-type="http://activitystrea.ms/schema/1.0/person" href="https://chat.brainbaking.com/users/wouter"/>
+      
+    
+  
+
+  
+</entry>
+
+  
+  <entry>
+  <activity:object-type>http://activitystrea.ms/schema/1.0/note</activity:object-type>
+  <activity:verb>http://activitystrea.ms/schema/1.0/post</activity:verb>
+  <id>https://chat.brainbaking.com/objects/0707fd54-185d-4ee7-9204-be370d57663c</id>
+  <title>@rubenerd just installed my own Pleroma server to say hi! Big fan of your micro-blog for ages here.</title>
+  <content type="html">&lt;p&gt;&lt;span class=&quot;h-card&quot;&gt;&lt;a class=&quot;u-url mention&quot; data-user=&quot;A4fIbZoZ0HNJPHV4Vs&quot; href=&quot;https://bsd.network/@rubenerd&quot; rel=&quot;ugc&quot;&gt;@&lt;span&gt;rubenerd&lt;/span&gt;&lt;/a&gt;&lt;/span&gt; just installed my own Pleroma server to say hi! Big fan of your micro-blog for ages here.&lt;/p&gt;</content>
+  <published>2021-02-26T12:04:14.048426Z</published>
+  <updated>2021-02-26T12:04:14.048426Z</updated>
+  <ostatus:conversation ref="https://chat.brainbaking.com/contexts/c6426a7a-9e0a-45c2-a73a-6d0571f3fcad">
+    https://chat.brainbaking.com/contexts/c6426a7a-9e0a-45c2-a73a-6d0571f3fcad
+  </ostatus:conversation>
+  <link href="https://chat.brainbaking.com/contexts/c6426a7a-9e0a-45c2-a73a-6d0571f3fcad" rel="ostatus:conversation"/>
+
+  
+    <summary></summary>
+  
+
+  
+    <link type="application/atom+xml" href='https://chat.brainbaking.com/objects/0707fd54-185d-4ee7-9204-be370d57663c' rel="self"/>
+    <link type="text/html" href='https://chat.brainbaking.com/objects/0707fd54-185d-4ee7-9204-be370d57663c' rel="alternate"/>
+  
+
+  
+
+  
+
+  
+
+  
+    
+      <link rel="mentioned" ostatus:object-type="http://activitystrea.ms/schema/1.0/collection" href="http://activityschema.org/collection/public"/>
+    
+  
+    
+      
+        <link rel="mentioned" ostatus:object-type="http://activitystrea.ms/schema/1.0/person" href="https://bsd.network/users/rubenerd"/>
+      
+    
+  
+    
+      
+    
+  
+    
+      
+        <link rel="mentioned" ostatus:object-type="http://activitystrea.ms/schema/1.0/person" href="https://chat.brainbaking.com/users/wouter"/>
+      
+    
+  
+
+  
+</entry>
+
+  
+</feed>
