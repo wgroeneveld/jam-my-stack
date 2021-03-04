@@ -4,17 +4,8 @@ const fs = require('fs').promises;
 const { writeFileSync, existsSync, mkdirSync } = require('fs');
 const { resolve } = require('path');
 const ent = require('ent')
+const { getFiles } = require('./file-utils');
 
-
-// https://stackoverflow.com/questions/5827612/node-js-fs-readdir-recursive-directory-search
-async function getFiles(dir) {
-  const dirents = await fs.readdir(dir, { withFileTypes: true });
-  const files = await Promise.all(dirents.map((dirent) => {
-    const res = resolve(dir, dirent.name);
-    return dirent.isDirectory() ? getFiles(res) : res;
-  }));
-  return Array.prototype.concat(...files);
-}
 
 function stripBeforeThirdSlash(str) {
   const splitted = str.split('/')
