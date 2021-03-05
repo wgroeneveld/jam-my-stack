@@ -32,6 +32,45 @@ Usage example:
 
 Note that this **does not** delete the notes dir with every call. It simply checks if there isn't already a file with the same name (based on the publication date), and adds one if not. 
 
+Example feed entry:
+
+```xml
+  <entry>
+  <activity:object-type>http://activitystrea.ms/schema/1.0/note</activity:object-type>
+  <activity:verb>http://activitystrea.ms/schema/1.0/post</activity:verb>
+  <id>https://chat.brainbaking.com/objects/77a3ecfb-47e1-4d7a-a24a-8b779d80a8ac</id>
+  <title>I pulled the Google plug and installed LineageOS: https://brainbaking.com/post/2021/03/getting-ri...</title>
+  <content type="html">I pulled the Google plug and installed LineageOS: &lt;a href=&quot;https://brainbaking.com/post/2021/03/getting-rid-of-tracking-using-lineageos/&quot; rel=&quot;ugc&quot;&gt;https://brainbaking.com/post/2021/03/getting-rid-of-tracking-using-lineageos/&lt;/a&gt; Very impressed so far! Also rely on my own CalDAV server to replace GCalendar. Any others here running &lt;a class=&quot;hashtag&quot; data-tag=&quot;lineageos&quot; href=&quot;https://chat.brainbaking.com/tag/lineageos&quot; rel=&quot;tag ugc&quot;&gt;#lineageos&lt;/a&gt; for privacy reasons?</content>
+  <published>2021-03-01T19:03:35.273023Z</published>
+  <updated>2021-03-01T19:03:35.273023Z</updated>
+  <ostatus:conversation ref="https://chat.brainbaking.com/contexts/ff9aa62e-3357-41ad-951d-15f6ad506424">
+    https://chat.brainbaking.com/contexts/ff9aa62e-3357-41ad-951d-15f6ad506424
+  </ostatus:conversation>
+  <link href="https://chat.brainbaking.com/contexts/ff9aa62e-3357-41ad-951d-15f6ad506424" rel="ostatus:conversation"/>
+    <summary></summary>
+    <link type="application/atom+xml" href='https://chat.brainbaking.com/objects/77a3ecfb-47e1-4d7a-a24a-8b779d80a8ac' rel="self"/>
+    <link type="text/html" href='https://chat.brainbaking.com/objects/77a3ecfb-47e1-4d7a-a24a-8b779d80a8ac' rel="alternate"/>
+    <category term="lineageos"></category>
+      <link rel="mentioned" ostatus:object-type="http://activitystrea.ms/schema/1.0/collection" href="http://activityschema.org/collection/public"/>
+        <link rel="mentioned" ostatus:object-type="http://activitystrea.ms/schema/1.0/person" href="https://chat.brainbaking.com/users/wouter"/>
+</entry>
+```
+
+This generates the file `01h20m3s35.md` (it uses your local timezone based on the `<published/>` tag - mine is GMT+1) with contents:
+
+```md
+---
+source: "https://chat.brainbaking.com/objects/77a3ecfb-47e1-4d7a-a24a-8b779d80a8ac"
+context: ""
+title: "I pulled the Google plug and installed LineageOS: https://brainbaking.com/post/2021/03/getting-ri..."
+date: "2021-03-01T19:03:35"
+---
+
+I pulled the Google plug and installed LineageOS: <a href="https://brainbaking.com/post/2021/03/getting-rid-of-tracking-using-lineageos/" rel="ugc">https://brainbaking.com/post/2021/03/getting-rid-of-tracking-using-lineageos/</a> Very impressed so far! Also rely on my own CalDAV server to replace GCalendar. Any others here running <a class="hashtag" data-tag="lineageos" href="https://chat.brainbaking.com/tag/lineageos" rel="tag ugc">#lineageos</a> for privacy reasons?
+```
+
+See implementation for more details and features. 
+
 ### 2. Goodreads
 
 #### 2.1 `createWidget`
