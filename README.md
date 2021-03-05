@@ -26,9 +26,14 @@ Usage example:
 ```js
     await mastodon.parseFeed({
         notesdir: `${__dirname}/content/notes`,
-        url: "https://chat.brainbaking.com/users/wouter/feed"
+        url: "https://chat.brainbaking.com/users/wouter/feed",
+        utcOffset: "+01:00"
     })
 ```
+
+Default values: 
+
+- `utcOffset`: `"+01:00"` (because that's where I am!)
 
 Note that this **does not** delete the notes dir with every call. It simply checks if there isn't already a file with the same name (based on the publication date), and adds one if not. 
 
@@ -56,7 +61,7 @@ Example feed entry:
 </entry>
 ```
 
-This generates the file `01h20m3s35.md` (it uses your local timezone based on the `<published/>` tag - mine is GMT+1) with contents:
+This generates the file `01h20m03s35.md` (it assumes UTC times in the feed and adjusts according to specified `utcOffset`, such as GMT+1 in this example), with contents:
 
 ```md
 ---

@@ -32,10 +32,11 @@ describe("mastodon feed parser tests", () => {
 	test("parse creates correct MD structure", async () => {
 		await parseMastoFeed({
 			url: "invalid",
-			notesdir: dumpdir
+			notesdir: dumpdir,
+			utcOffset: "+00:00"
 		})
 
-		const actualMd = (await fsp.readFile(`${dumpdir}/2021/03/01h19m3s35.md`)).toString()
+		const actualMd = (await fsp.readFile(`${dumpdir}/2021/03/01h19m03s35.md`)).toString()
 		expect(actualMd).toMatchSnapshot()
 	})
 
@@ -43,7 +44,8 @@ describe("mastodon feed parser tests", () => {
 		//https://aus.social/users/aussocialadmin/statuses/105817435308293091
 		await parseMastoFeed({
 			url: "invalid",
-			notesdir: dumpdir
+			notesdir: dumpdir,
+			utcOffset: "+00:00"			
 		})
 
 		const actualMd = await fsp.readFile(`${dumpdir}/2021/03/02h16m18s46.md`)
