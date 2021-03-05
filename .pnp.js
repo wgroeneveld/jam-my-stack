@@ -37,13 +37,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {
           "packageLocation": "./",
           "packageDependencies": [
+            ["dayjs", "npm:1.10.4"],
             ["ent", "npm:2.2.0"],
             ["fast-xml-parser", "npm:3.18.0"],
             ["got", "npm:11.8.2"],
             ["howlongtobeat", "npm:1.3.1"],
             ["jest", "npm:26.6.3"],
             ["lunr", "npm:2.3.9"],
-            ["moment", "npm:2.29.1"],
             ["parser-front-matter", "npm:1.6.4"]
           ],
           "linkType": "SOFT",
@@ -2036,6 +2036,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["dayjs", [
+        ["npm:1.10.4", {
+          "packageLocation": "./.yarn/cache/dayjs-npm-1.10.4-e450424eab-3b7bb2232f.zip/node_modules/dayjs/",
+          "packageDependencies": [
+            ["dayjs", "npm:1.10.4"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["debug", [
         ["npm:2.6.9", {
           "packageLocation": "./.yarn/cache/debug-npm-2.6.9-7d4cb597dc-559f44f98c.zip/node_modules/debug/",
@@ -3518,13 +3527,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",
           "packageDependencies": [
             ["jam-my-stack", "workspace:."],
+            ["dayjs", "npm:1.10.4"],
             ["ent", "npm:2.2.0"],
             ["fast-xml-parser", "npm:3.18.0"],
             ["got", "npm:11.8.2"],
             ["howlongtobeat", "npm:1.3.1"],
             ["jest", "npm:26.6.3"],
             ["lunr", "npm:2.3.9"],
-            ["moment", "npm:2.29.1"],
             ["parser-front-matter", "npm:1.6.4"]
           ],
           "linkType": "SOFT",
@@ -4503,15 +4512,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/mkdirp-npm-1.0.4-37f6ef56b9-1aa3a6a2d7.zip/node_modules/mkdirp/",
           "packageDependencies": [
             ["mkdirp", "npm:1.0.4"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["moment", [
-        ["npm:2.29.1", {
-          "packageLocation": "./.yarn/cache/moment-npm-2.29.1-787d9fdafd-86729013fe.zip/node_modules/moment/",
-          "packageDependencies": [
-            ["moment", "npm:2.29.1"]
           ],
           "linkType": "HARD",
         }]

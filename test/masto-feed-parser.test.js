@@ -33,7 +33,7 @@ describe("mastodon feed parser tests", () => {
 		await parseMastoFeed({
 			url: "invalid",
 			notesdir: dumpdir,
-			utcOffset: "+00:00"
+			utcOffset: 0
 		})
 
 		const actualMd = (await fsp.readFile(`${dumpdir}/2021/03/01h19m03s35.md`)).toString()
@@ -45,7 +45,7 @@ describe("mastodon feed parser tests", () => {
 		await parseMastoFeed({
 			url: "invalid",
 			notesdir: dumpdir,
-			utcOffset: "+00:00"			
+			utcOffset: 0
 		})
 
 		const actualMd = await fsp.readFile(`${dumpdir}/2021/03/02h16m18s46.md`)

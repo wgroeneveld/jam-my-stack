@@ -27,13 +27,13 @@ Usage example:
     await mastodon.parseFeed({
         notesdir: `${__dirname}/content/notes`,
         url: "https://chat.brainbaking.com/users/wouter/feed",
-        utcOffset: "+01:00"
+        utcOffset: 60
     })
 ```
 
 Default values: 
 
-- `utcOffset`: `"+01:00"` (because that's where I am!)
+- `utcOffset`: `60` (= GMT+1, that's where I am!) (in **minutes**, see [day.js docs](https://day.js.org/docs/en/manipulate/utc-offset)
 
 Note that this **does not** delete the notes dir with every call. It simply checks if there isn't already a file with the same name (based on the publication date), and adds one if not. 
 

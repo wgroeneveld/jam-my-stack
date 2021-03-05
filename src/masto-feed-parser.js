@@ -3,7 +3,9 @@ const parser = require("fast-xml-parser");
 const { writeFileSync, existsSync, mkdirSync } = require('fs');
 const ent = require('ent')
 const { getFiles } = require('./file-utils');
-const moment = require('moment')
+const dayjs = require('dayjs')
+const utc = require('dayjs/plugin/utc')
+dayjs.extend(utc)
 
 function stripBeforeThirdSlash(str) {
   const splitted = str.split('/')
@@ -38,7 +40,7 @@ ${item.content}
 //  utcOffset = "+01:00"
 
 async function parseMastoFeed(options) {
-  const { notesdir, url, utcOffset = "+01:00" } = options
+  const { notesdir, url, utcOffset = 60 } = options
 
   const notesroot = await getFiles(notesdir)
   const notes = notesroot
@@ -55,7 +57,7 @@ async function parseMastoFeed(options) {
     ignoreAttributes: false
   })
   const items = root.feed.entry.map(item => {
-    const date = moment.utc(item.published).utcOffset(utcOffset)
+    const date = dayjs.utc(item.published).utcOffset(utcOffset)
     const year = date.format("YYYY")
     const month = date.format("MM")
     const day = date.format("DD")
