@@ -26,6 +26,7 @@ describe("mastodon feed parser tests", () => {
 		let dir = await fsp.readdir(`${dumpdir}/2021/02`, { withFileTypes: true })
 		expect(dir.length).toBe(8)
 		dir = await fsp.readdir(`${dumpdir}/2021/03`, { withFileTypes: true })
+		console.log(dir)
 		expect(dir.length).toBe(4)
 	})
 
