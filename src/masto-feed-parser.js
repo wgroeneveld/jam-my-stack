@@ -27,7 +27,7 @@ function convertAtomItemToMd(item, opts) {
 source: "${item.url}"
 context: "${item.context}"
 title: "${item.title}"
-date: "${item.year}-${item.month}-${item.day}T${strpad(item.date.getHours())}:${strpad(item.date.getMinutes())}:${strpad(item.date.getSeconds())}"
+date: "${item.year}-${item.month}-${item.day}T${strpad(item.date.getUTCHours())}:${strpad(item.date.getMinutes())}:${strpad(item.date.getSeconds())}"
 ---
 
 ${item.content}
@@ -69,7 +69,7 @@ async function parseMastoFeed(opts) {
       url: item.id, // format: https://chat.brainbaking.com/objects/0707fd54-185d-4ee7-9204-be370d57663c
       context,
       id: stripBeforeLastSlash(item.id),
-      hash: `${day}h${date.getHours()}m${date.getMinutes()}s${date.getSeconds()}`,
+      hash: `${day}h${date.getUTCHours()}m${date.getMinutes()}s${date.getSeconds()}`,
       date, // format: 2021-03-02T16:18:46.658056Z
       year,
       month,

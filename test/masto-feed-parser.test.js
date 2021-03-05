@@ -26,7 +26,6 @@ describe("mastodon feed parser tests", () => {
 		let dir = await fsp.readdir(`${dumpdir}/2021/02`, { withFileTypes: true })
 		expect(dir.length).toBe(8)
 		dir = await fsp.readdir(`${dumpdir}/2021/03`, { withFileTypes: true })
-		console.log(dir)
 		expect(dir.length).toBe(4)
 	})
 
@@ -36,8 +35,8 @@ describe("mastodon feed parser tests", () => {
 			notesdir: dumpdir
 		})
 
-		const actualMd = await fsp.readFile(`${dumpdir}/2021/03/01h20m3s35.md`).toString()
-		const expectedMd = await fsp.readFile(`${__dirname}/expected-01h20m3s35.md`).toString()
+		const actualMd = await fsp.readFile(`${dumpdir}/2021/03/01h19m3s35.md`).toString()
+		const expectedMd = await fsp.readFile(`${__dirname}/expected-01h19m3s35.md`).toString()
 
 		expect(actualMd).toEqual(expectedMd)
 	})
@@ -49,7 +48,7 @@ describe("mastodon feed parser tests", () => {
 			notesdir: dumpdir
 		})
 
-		const actualMd = await fsp.readFile(`${dumpdir}/2021/03/02h17m18s46.md`)
+		const actualMd = await fsp.readFile(`${dumpdir}/2021/03/02h16m18s46.md`)
 		const expectedReplyTo = "https://social.linux.pizza/users/StampedingLonghorn/statuses/105821099684887793"
 
 		const md = frontMatterParser.parseSync(actualMd.toString())
