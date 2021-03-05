@@ -98,3 +98,19 @@ Usage example:
         `${__dirname}/content/notes`])
     await fsp.writeFile(`${__dirname}/static/js/brainbaking-post.json`, JSON.stringify(index), 'utf-8')
 ```
+
+### 4. Howlongtobeat
+
+#### 4.1 `howlong`
+
+Adds https://howlongtobeat.com/ game length (`MainGame`) and an ID to your front matter, provided you first added a property called `game_name`. (This gets substituted).
+
+Usage example:
+
+```js
+  await howlong(`${__dirname}/content/articles`)
+```
+
+It will print out games and metadata it found. Uses the cool [howlongtobeat npm package](https://www.npmjs.com/package/howlongtobeat) to do its dirty work. 
+
+Working example: https://jefklakscodex.com/articles/reviews/diablo-3/ (on the left side). Check out the Hugo template to use the properties at https://github.com/wgroeneveld/jefklakscodex .
