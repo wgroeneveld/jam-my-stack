@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`howlong adds howlong to beat id and hours to frontmatter 1`] = `
+"---
+title: \\"wizardry 8 review\\"
+howlongtobeat_id: 11228
+howlongtobeat_hrs: 93
+game_name: \\"Wizardry 8\\"
+---
+
+blabla nice one 9/10 GG!
+"
+`;

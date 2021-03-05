@@ -13,16 +13,6 @@ game_name: "Wizardry 8"
 blabla nice one 9/10 GG!
 `
 
-const expectedmd = `---
-title: "wizardry 8 review"
-howlongtobeat_id: 11228
-howlongtobeat_hrs: 93
-game_name: "Wizardry 8"
----
-
-blabla nice one 9/10 GG!
-`
-
 const dumpdir = `${__dirname}/howlong-stub`
 beforeEach(async () => {
 	if(fs.existsSync(dumpdir)) {
@@ -37,5 +27,5 @@ test('howlong adds howlong to beat id and hours to frontmatter', async () => {
 	await howlong(dumpdir)
 
 	const actualmd = await fsp.readFile(`${dumpdir}/howlongtobeat-sample.md`, 'utf-8')
-	expect(actualmd).toEqual(expectedmd)
+	expect(actualmd).toMatchSnapshot()
 })

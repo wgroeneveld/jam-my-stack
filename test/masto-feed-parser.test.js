@@ -35,10 +35,8 @@ describe("mastodon feed parser tests", () => {
 			notesdir: dumpdir
 		})
 
-		const actualMd = await fsp.readFile(`${dumpdir}/2021/03/01h19m3s35.md`).toString()
-		const expectedMd = await fsp.readFile(`${__dirname}/expected-01h19m3s35.md`).toString()
-
-		expect(actualMd).toEqual(expectedMd)
+		const actualMd = (await fsp.readFile(`${dumpdir}/2021/03/01h19m3s35.md`)).toString()
+		expect(actualMd).toMatchSnapshot()
 	})
 
 	test("parse creates MD with context if in-reply-to", async () => {
