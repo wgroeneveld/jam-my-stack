@@ -30,6 +30,8 @@ Usage example:
     })
 ```
 
+Note that this **does not** delete the notes dir with every call. It simply checks if there isn't already a file with the same name (based on the publication date), and adds one if not. 
+
 ### 2. Goodreads
 
 #### 2.1 `createWidget`
