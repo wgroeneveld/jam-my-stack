@@ -8,7 +8,10 @@ These simple scripts **enrich your Jamstack-site** by adding/manipulating/whatev
 
 ## The tools
 
-Usage: `const { mastodon, goodreads, lunr } = require('jam-my-stack')`
+Usage: 
+
+1. `yarn add jam-my-stack`
+2. `const { mastodon, goodreads, lunr } = require('jam-my-stack')`
 
 ### 1. Mastodon
 
