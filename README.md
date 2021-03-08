@@ -8,6 +8,8 @@ Published at https://www.npmjs.com/package/jam-my-stack
 
 These simple scripts **enrich your Jamstack-site** by adding/manipulating/whatever (meta)data, such as extra posts, indexing, and so forth. A primary example of these tools in action is my own site https://brainbaking.com - inspect how it's used at https://github.com/wgroeneveld/brainbaking 
 
+**Are you looking for a way to receive webmentions?** See https://github.com/wgroeneveld/serve-my-jams !
+
 ## The tools
 
 Usage: 
