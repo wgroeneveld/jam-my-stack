@@ -1,12 +1,12 @@
 const fs = require('fs');
 const fsp = require('fs').promises;
-const { rmdir } = require('./utils')
+const { rmdir } = require('./../utils')
 
 const frontMatterParser = require('parser-front-matter');
 
 jest.mock('got');
 
-const { parseMastoFeed } = require('../src/masto-feed-parser')
+const { parseMastoFeed } = require('../../src/mastodon/feed-parser')
 const dumpdir = `${__dirname}/dump`
 
 describe("mastodon feed parser tests", () => {

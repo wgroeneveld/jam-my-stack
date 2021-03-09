@@ -1,7 +1,7 @@
-const { parseMastoFeed } = require('./masto-feed-parser')
-const { widgetify } = require('./goodreads-widgetify.js')
-const { buildIndex } = require('./lunr-index-builder.js')
-const { howlong } = require('./howlong-tobeat.js')
+const { parseMastoFeed } = require('./mastodon/feed-parser')
+const { widgetify } = require('./goodreads/widgetify.js')
+const { buildIndex } = require('./lunr/index-builder.js')
+const { howlong } = require('./howlongtobeat/howlong.js')
 
 module.exports = {
 	mastodon: {

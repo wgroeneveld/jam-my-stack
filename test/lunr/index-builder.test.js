@@ -1,4 +1,4 @@
-const { buildIndex } = require('../src/lunr-index-builder')
+const { buildIndex } = require('../../src/lunr/index-builder')
 
 let result = null
 

@@ -1,5 +1,5 @@
 const fs = require('fs').promises;
-const { getFiles } = require('./file-utils');
+const { getFiles } = require('./../file-utils');
 const { promisify } = require('util');
 const frontMatterParser = require('parser-front-matter');
 

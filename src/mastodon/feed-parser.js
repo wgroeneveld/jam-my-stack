@@ -2,7 +2,7 @@ const got = require("got");
 const parser = require("fast-xml-parser");
 const { writeFileSync, existsSync, mkdirSync } = require('fs');
 const ent = require('ent')
-const { getFiles } = require('./file-utils');
+const { getFiles } = require('./../file-utils');
 const dayjs = require('dayjs')
 const utc = require('dayjs/plugin/utc')
 dayjs.extend(utc)

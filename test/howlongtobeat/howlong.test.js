@@ -1,9 +1,9 @@
 jest.mock('howlongtobeat')
 
-const { howlong } = require('../src/howlong-tobeat.js')
+const { howlong } = require('../../src/howlongtobeat/howlong.js')
 const fs = require('fs');
 const fsp = require('fs').promises;
-const { rmdir } = require('./utils')
+const { rmdir } = require('./../utils')
 
 const mdsample = `---
 title: "wizardry 8 review"

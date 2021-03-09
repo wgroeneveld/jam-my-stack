@@ -110,7 +110,28 @@ Usage example:
 
 #### 4.1 `howlong`
 
-Adds https://howlongtobeat.com/ game length (`MainGame`) and an ID to your front matter, provided you first added a property called `game_name`. (This gets substituted).
+Adds https://howlongtobeat.com/ game length (`MainGame`) and an ID to your front matter (keys `howlongtobeat_id` and `howlongtobeat_hrs`), provided you first added a property called `game_name`. (This gets substituted).
+
+So, Frontmatter like this:
+
+```
+---
+title: Diablo 3 my Review
+game_name: Diablo 3
+---
+```
+
+Gets subsituted by something like this:
+
+```
+---
+title: Diablo 3 my Review
+howlongtobeat_id: 62129
+howlongtobeat_hrs: 20.5
+---
+```
+
+In your Hugo template, add a link to `https://howlongtobeat.com/game?id={howlongtobeat_id}` and you're all set!
 
 Usage example:
 

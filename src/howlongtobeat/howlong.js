@@ -1,7 +1,7 @@
 const hltb = require('howlongtobeat')
 const hltbService = new hltb.HowLongToBeatService()
 
-const { getFiles } = require('./file-utils');
+const { getFiles } = require('./../file-utils');
 const fs = require('fs').promises;
 
 const {promisify} = require('util');
