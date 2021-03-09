@@ -142,3 +142,11 @@ Usage example:
 It will print out games and metadata it found. Uses the cool [howlongtobeat npm package](https://www.npmjs.com/package/howlongtobeat) to do its dirty work. 
 
 Working example: https://jefklakscodex.com/articles/reviews/diablo-3/ (on the left side). Check out the Hugo template to use the properties at https://github.com/wgroeneveld/jefklakscodex .
+
+### 5. Webmentions
+
+In cooperation with https://github.com/wgroeneveld/serve-my-jams
+
+#### 5.1 `getWebmentions`
+
+Calls the get webmention endpoint, sorts by date, adds metadata such as relative date (`x days ago`, property `publishedFromNow`), and returns data. Could be written in a `data` folder for Hugo to parse, for example. 

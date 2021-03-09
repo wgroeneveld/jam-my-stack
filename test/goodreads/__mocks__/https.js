@@ -1,6 +1,6 @@
 const fs = require('fs')
 
-const fakedata = fs.readFileSync('./test/__mocks__/expected-goodreads-content.js')
+const fakedata = fs.readFileSync('./test/goodreads/__mocks__/expected-goodreads-content.js')
 
 function getmock(url, callback) {
 	callback({

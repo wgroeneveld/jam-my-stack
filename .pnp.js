@@ -44,6 +44,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["howlongtobeat", "npm:1.3.1"],
             ["jest", "npm:26.6.3"],
             ["lunr", "npm:2.3.9"],
+            ["mockdate", "npm:3.0.2"],
             ["parser-front-matter", "npm:1.6.4"]
           ],
           "linkType": "SOFT",
@@ -3534,6 +3535,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["howlongtobeat", "npm:1.3.1"],
             ["jest", "npm:26.6.3"],
             ["lunr", "npm:2.3.9"],
+            ["mockdate", "npm:3.0.2"],
             ["parser-front-matter", "npm:1.6.4"]
           ],
           "linkType": "SOFT",
@@ -4512,6 +4514,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/mkdirp-npm-1.0.4-37f6ef56b9-1aa3a6a2d7.zip/node_modules/mkdirp/",
           "packageDependencies": [
             ["mkdirp", "npm:1.0.4"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["mockdate", [
+        ["npm:3.0.2", {
+          "packageLocation": "./.yarn/cache/mockdate-npm-3.0.2-14482dcf0f-27a242abaa.zip/node_modules/mockdate/",
+          "packageDependencies": [
+            ["mockdate", "npm:3.0.2"]
           ],
           "linkType": "HARD",
         }]

@@ -1,7 +1,16 @@
 const fs = require('fs').promises
 
-async function got() {
-	return fs.readFile('./test/__mocks__/masto-feed-sample.xml', 'utf8');
+async function got(url) {
+	console.log(`through got mock, url ${url}`)
+	if(url.indexOf('/webmention') >= 0) {
+		const result = await fs.readFile(`./test/__mocks__/get-sample.json`, 'utf8');
+		return {
+			body: JSON.parse(result)
+		}
+	}
+
+	const result = await fs.readFile(`./test/__mocks__/masto-feed-sample.xml`, 'utf8');
+	return result
 }
 
 module.exports = got
