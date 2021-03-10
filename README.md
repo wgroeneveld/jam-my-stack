@@ -150,3 +150,5 @@ In cooperation with https://github.com/wgroeneveld/serve-my-jams
 #### 5.1 `getWebmentions`
 
 Calls the get webmention endpoint, sorts by date, adds metadata such as relative date (`x days ago`, property `publishedFromNow`), and returns data. Could be written in a `data` folder for Hugo to parse, for example. 
+
+Parameters: just one, the `domain`.
