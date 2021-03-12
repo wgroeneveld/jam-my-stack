@@ -5,7 +5,8 @@ async function got(url) {
 	if(url.indexOf('/webmention') >= 0) {
 		const result = await fs.readFile(`./test/__mocks__/get-sample.json`, 'utf8');
 		return {
-			body: JSON.parse(result)
+			// WHY not a JSON.parse here? The body is a STRING IRL!
+			body: result
 		}
 	}
 
