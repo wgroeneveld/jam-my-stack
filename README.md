@@ -29,13 +29,17 @@ Usage example:
     await mastodon.parseFeed({
         notesdir: `${__dirname}/content/notes`,
         url: "https://chat.brainbaking.com/users/wouter/feed",
-        utcOffset: 60
+        utcOffset: 60,
+        titleCount: 50,
+        titlePrefix: "Note: "
     })
 ```
 
 Default values: 
 
 - `utcOffset`: `60` (= GMT+1, that's where I am!) (in **minutes**, see [day.js docs](https://day.js.org/docs/en/manipulate/utc-offset)
+- `titleCount`: `50`. Will add "..." and trim if title length bigger.
+- `titlePrefix`: `""`. Will add before title (e.g. "Note: ")
 
 Note that this **does not** delete the notes dir with every call. It simply checks if there isn't already a file with the same name (based on the publication date), and adds one if not. 
 

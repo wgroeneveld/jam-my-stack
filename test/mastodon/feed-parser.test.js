@@ -18,6 +18,35 @@ describe("mastodon feed parser tests", () => {
 		fs.mkdirSync(dumpdir)
 	});
 
+	test("parse trims title according to config and adds three dots", async () => {
+		await parseMastoFeed({
+			url: "invalid",
+			notesdir: dumpdir,
+			utcOffset: 0,
+			titleCount: 5,
+			titlePrefix: "Note: "
+		})
+
+		const actualMd = await fsp.readFile(`${dumpdir}/2021/03/02h16m18s46.md`)
+		
+		const md = frontMatterParser.parseSync(actualMd.toString())
+		expect(md.data.title).toBe("Note: @Stam...")
+	})
+
+	test("parse does not trim if titleCount > title length and does not add three dots", async () => {
+		await parseMastoFeed({
+			url: "invalid",
+			notesdir: dumpdir,
+			utcOffset: 0,
+			titleCount: 5000
+		})
+
+		const actualMd = await fsp.readFile(`${dumpdir}/2021/03/02h16m18s46.md`)
+		
+		const md = frontMatterParser.parseSync(actualMd.toString())
+		expect(md.data.title).toBe("@StampedingLonghorn I tried to chase him away, but you know how that turned out... 😼 There&#39;s ...")
+	})
+
 	test("parse creates separate notes in each month subdir", async () => {
 		await parseMastoFeed({
 			url: "invalid",
@@ -34,7 +63,8 @@ describe("mastodon feed parser tests", () => {
 		await parseMastoFeed({
 			url: "invalid",
 			notesdir: dumpdir,
-			utcOffset: 0
+			utcOffset: 0,
+			titleCount: 5000			
 		})
 
 		const actualMd = (await fsp.readFile(`${dumpdir}/2021/03/01h19m03s35.md`)).toString()
@@ -46,7 +76,8 @@ describe("mastodon feed parser tests", () => {
 		await parseMastoFeed({
 			url: "invalid",
 			notesdir: dumpdir,
-			utcOffset: 0
+			utcOffset: 0,
+			titleCount: 5000			
 		})
 
 		const actualMd = await fsp.readFile(`${dumpdir}/2021/03/02h16m18s46.md`)

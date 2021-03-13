@@ -34,13 +34,22 @@ ${item.content}
   writeFileSync(`${path}/${item.hash}.md`, mddata, 'utf-8')
 }
 
+function trimIfNeeded(title, count, prefix) {
+  if(title.length > count) {
+    return prefix + title.substring(0, count) + "..."
+  }
+  return prefix + title
+}
+
 // opts:
 //  notesdir = `${__dirname}/content/notes`
 //  url = "https://chat.brainbaking.com/users/wouter/feed";
-//  utcOffset = "+01:00"
+//  utcOffset = 60 (in minutes)
+//  titleCount = 50
+//  titlePrefix = "Note: "
 
 async function parseMastoFeed(options) {
-  const { notesdir, url, utcOffset = 60 } = options
+  const { notesdir, url, utcOffset = 60, titleCount = 50, titlePrefix = "" } = options
 
   const notesroot = await getFiles(notesdir)
   const notes = notesroot
@@ -65,7 +74,7 @@ async function parseMastoFeed(options) {
     const context = item['thr:in-reply-to'] ? item['thr:in-reply-to']['@_ref'] : ""
 
     return { 
-      title: ent.decode(item.title), // summary (cut-off) of content
+      title: trimIfNeeded(ent.decode(item.title), titleCount, titlePrefix), // summary (cut-off) of content
       content: ent.decode(item.content['#text']), // format: &lt;span class=&quot;h-card.... 
       url: item.id, // format: https://chat.brainbaking.com/objects/0707fd54-185d-4ee7-9204-be370d57663c
       context,
