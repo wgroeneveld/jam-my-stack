@@ -44,7 +44,7 @@ describe("mastodon feed parser tests", () => {
 		const actualMd = await fsp.readFile(`${dumpdir}/2021/03/02h16m18s46.md`)
 		
 		const md = frontMatterParser.parseSync(actualMd.toString())
-		expect(md.data.title).toBe("@StampedingLonghorn I tried to chase him away, but you know how that turned out... 😼 There&#39;s ...")
+		expect(md.data.title).toBe("@StampedingLonghorn I tried to chase him away, but you know how that turned out... 😼 There's ...")
 	})
 
 	test("parse creates separate notes in each month subdir", async () => {

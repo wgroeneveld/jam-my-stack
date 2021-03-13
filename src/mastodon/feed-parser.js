@@ -73,9 +73,10 @@ async function parseMastoFeed(options) {
     // format: <thr:in-reply-to ref='https://social.linux.pizza/users/StampedingLonghorn/statuses/105821099684887793' href='https://social.linux.pizza/users/StampedingLonghorn/statuses/105821099684887793'/>
     const context = item['thr:in-reply-to'] ? item['thr:in-reply-to']['@_ref'] : ""
 
+    // WHY double decode? &#34; = &amp;#34; - first decode '&', then the other char.'
     return { 
-      title: trimIfNeeded(ent.decode(item.title), titleCount, titlePrefix), // summary (cut-off) of content
-      content: ent.decode(item.content['#text']), // format: &lt;span class=&quot;h-card.... 
+      title: trimIfNeeded(ent.decode(ent.decode(item.title)), titleCount, titlePrefix), // summary (cut-off) of content
+      content: ent.decode(ent.decode(item.content['#text'])), // format: &lt;span class=&quot;h-card.... 
       url: item.id, // format: https://chat.brainbaking.com/objects/0707fd54-185d-4ee7-9204-be370d57663c
       context,
       id: stripBeforeLastSlash(item.id),
