@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed
+  xmlns="http://www.w3.org/2005/Atom"
+  xmlns:thr="http://purl.org/syndication/thread/1.0"
+  xmlns:activity="http://activitystrea.ms/spec/1.0/"
+  xmlns:poco="http://portablecontacts.net/spec/1.0"
+  xmlns:ostatus="http://ostatus.org/schema/1.0">
+
+  <id>https://chat.brainbaking.com/users/wouter/feed.atom</id>
+  <title>wouter's timeline</title>
+  <updated>2021-03-02T16:18:46</updated>
+  <logo>https://chat.brainbaking.com/media/f39bcd85-5098-45e2-b395-e274b712d512/headshot_2020.jpg</logo>
+  <link rel="self" href="https://chat.brainbaking.com/users/wouter/feed.atom" type="application/atom+xml"/>
+
+  <author>
+  <id>https://chat.brainbaking.com/users/wouter</id>
+  <activity:object>http://activitystrea.ms/schema/1.0/person</activity:object>
+  <uri>https://chat.brainbaking.com/users/wouter</uri>
+  <poco:preferredUsername>wouter</poco:preferredUsername>
+  <poco:displayName>Wouter Groeneveld</poco:displayName>
+  <poco:note>Level 35 Brain Baker. Loving the smell of freshly baked thoughts (and bread) in the morning 🍞. Sometimes convincing others to bake their brain (and bread) too 🧠. </poco:note>
+  <summary>Level 35 Brain Baker. Loving the smell of freshly baked thoughts (and bread) in the morning 🍞. Sometimes convincing others to bake their brain (and bread) too 🧠. </summary>
+  <name>wouter</name>
+  <link rel="avatar" href="https://chat.brainbaking.com/media/f39bcd85-5098-45e2-b395-e274b712d512/headshot_2020.jpg"/>
+  
+    <link rel="header" href="https://chat.brainbaking.com/media/3399cd78-4fd4-40ab-a174-c7805576a826/boekcover2.jpg"/>
+  
+  
+    <ap_enabled>true</ap_enabled>
+  
+</author>
+
+
+  
+    <link rel="next" href="https://chat.brainbaking.com/users/wouter/feed.atom?max_id=A4fIjNa6N1OJmaSMAS" type="application/atom+xml"/>
+  <entry>
+  <activity:object-type>http://activitystrea.ms/schema/1.0/note</activity:object-type>
+  <activity:verb>http://activitystrea.ms/schema/1.0/post</activity:verb>
+  <id>https://chat.brainbaking.com/objects/a51e13ce-d618-4602-84f7-f398126510ff</id>
+  <title>Enjoyed an afternoon of oldskool Diablo II on the Europebattle servers. We did a few Mephisto run...</title>
+  <content type="html">Enjoyed an afternoon of oldskool Diablo II on the Europebattle servers. We did a few Mephisto runs, managed to hit Hell, and I re-converetd my druid into a windy one. Good times!</content>
+  <published>2021-03-14T16:41:53.518661Z</published>
+  <updated>2021-03-14T16:41:53.518661Z</updated>
+  <ostatus:conversation ref="https://chat.brainbaking.com/contexts/6c75527a-613c-47a4-9922-47bac2cb9ee5">
+    https://chat.brainbaking.com/contexts/6c75527a-613c-47a4-9922-47bac2cb9ee5
+  </ostatus:conversation>
+  <link href="https://chat.brainbaking.com/contexts/6c75527a-613c-47a4-9922-47bac2cb9ee5" rel="ostatus:conversation"/>
+
+  
+    <summary></summary>
+  
+
+  
+    <link type="application/atom+xml" href='https://chat.brainbaking.com/objects/a51e13ce-d618-4602-84f7-f398126510ff' rel="self"/>
+    <link type="text/html" href='https://chat.brainbaking.com/objects/a51e13ce-d618-4602-84f7-f398126510ff' rel="alternate"/>
+  
+
+  
+
+  
+    <link rel="enclosure" href="https://chat.brainbaking.com/media/6f8b72ca-9bfb-460b-9609-c4298a8cab2b/EuropeBattle%202021-03-14%2016-20-36-87.jpg" type="image/jpeg"/>
+  
+    <link rel="enclosure" href="https://chat.brainbaking.com/media/3dbcb044-2acc-4ace-a4f6-37ce94c3f2b1/EuropeBattle%202021-03-14%2015-35-01-56.jpg" type="image/jpeg"/>
+  
+
+  
+
+  
+    
+      <link rel="mentioned" ostatus:object-type="http://activitystrea.ms/schema/1.0/collection" href="http://activityschema.org/collection/public"/>
+    
+  
+    
+      
+    
+  
+    
+      
+        <link rel="mentioned" ostatus:object-type="http://activitystrea.ms/schema/1.0/person" href="https://chat.brainbaking.com/users/wouter"/>
+      
+    
+  
+
+  
+</entry>
+
+</feed>

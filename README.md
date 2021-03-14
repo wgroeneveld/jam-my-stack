@@ -82,6 +82,10 @@ I pulled the Google plug and installed LineageOS: <a href="https://brainbaking.c
 
 See implementation for more details and features. 
 
+**Also parsers**:
+
+- `<link rel="enclosure"/>` image types (see `render-enclosures.ejs`) [ejs template](https://ejs.co/), that is appended to the Markdown file if any are found. Styling is up to you...
+
 ### 2. Goodreads
 
 #### 2.1 `createWidget`

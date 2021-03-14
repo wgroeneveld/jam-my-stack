@@ -10,7 +10,7 @@ async function got(url) {
 		}
 	}
 
-	const result = await fs.readFile(`./test/__mocks__/masto-feed-sample.xml`, 'utf8');
+	const result = await fs.readFile(`./test/__mocks__/${url}.xml`, 'utf8');
 	return result
 }
 

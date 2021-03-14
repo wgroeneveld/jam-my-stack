@@ -1,11 +1,12 @@
+const ejs = require('ejs');
 const got = require("got");
 const parser = require("fast-xml-parser");
-const { writeFileSync, existsSync, mkdirSync } = require('fs');
-const ent = require('ent')
+const { readFileSync, writeFileSync, existsSync, mkdirSync } = require('fs');
+const ent = require('ent');
 const { getFiles } = require('./../file-utils');
-const dayjs = require('dayjs')
-const utc = require('dayjs/plugin/utc')
-dayjs.extend(utc)
+const dayjs = require('dayjs');
+const utc = require('dayjs/plugin/utc');
+dayjs.extend(utc);
 
 function stripBeforeThirdSlash(str) {
   const splitted = str.split('/')
@@ -16,12 +17,19 @@ function stripBeforeLastSlash(str) {
   return str.substring(str.lastIndexOf('/') + 1, str.length)
 }
 
+function tmpl(filename, data) {
+  const template = readFileSync(filename).toString()
+  return ejs.render(template, data, {
+    rmWhitespace: true
+  })  
+}
+
 function convertAtomItemToMd(item, notesdir) {
   const path = `${notesdir}/${item.year}/${item.month}`
   if(!existsSync(`${notesdir}/${item.year}`)) mkdirSync(`${notesdir}/${item.year}`)
   if(!existsSync(path)) mkdirSync(path)
 
-  const mddata = `---
+  let mddata = `---
 source: "${item.url}"
 context: "${item.context}"
 title: "${item.title}"
@@ -29,7 +37,10 @@ date: "${item.year}-${item.month}-${item.day}T${item.date.format("HH:mm:ss")}"
 ---
 
 ${item.content}
-  `
+`
+  if(item.media.length > 0) {
+    mddata += '\n' + tmpl('./src/mastodon/render-enclosures.ejs', { images: item.media })
+  }
 
   writeFileSync(`${path}/${item.hash}.md`, mddata, 'utf-8')
 }
@@ -65,13 +76,21 @@ async function parseMastoFeed(options) {
   const root = parser.parse(buffer.toString(), {
     ignoreAttributes: false
   })
-  const items = root.feed.entry.map(item => {
+
+  // in case a single item is in a feed instead of an array, wrap it ourselves
+  const entries = root.feed.entry.map ? root.feed.entry : [root.feed.entry]
+  
+  const items = entries.map(item => {
     const date = dayjs.utc(item.published).utcOffset(utcOffset)
     const year = date.format("YYYY")
     const month = date.format("MM")
     const day = date.format("DD")
     // format: <thr:in-reply-to ref='https://social.linux.pizza/users/StampedingLonghorn/statuses/105821099684887793' href='https://social.linux.pizza/users/StampedingLonghorn/statuses/105821099684887793'/>
     const context = item['thr:in-reply-to'] ? item['thr:in-reply-to']['@_ref'] : ""
+
+    const media = item.link?.filter(l => 
+      l['@_rel'] === 'enclosure' &&
+      l['@_type'] === 'image/jpeg').map(l => l['@_href'])
 
     // WHY double decode? &#34; = &amp;#34; - first decode '&', then the other char.'
     return { 
@@ -80,6 +99,7 @@ async function parseMastoFeed(options) {
       url: item.id, // format: https://chat.brainbaking.com/objects/0707fd54-185d-4ee7-9204-be370d57663c
       context,
       id: stripBeforeLastSlash(item.id),
+      media,
       hash: `${day}h${date.format("HH")}m${date.format("mm")}s${date.format("ss")}`,
       date, // format: 2021-03-02T16:18:46.658056Z
       year,

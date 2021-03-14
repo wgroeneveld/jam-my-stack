@@ -38,6 +38,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",
           "packageDependencies": [
             ["dayjs", "npm:1.10.4"],
+            ["ejs", "npm:3.1.6"],
             ["ent", "npm:2.2.0"],
             ["fast-xml-parser", "npm:3.18.0"],
             ["got", "npm:11.8.2"],
@@ -1305,6 +1306,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["async", [
+        ["npm:0.9.2", {
+          "packageLocation": "./.yarn/cache/async-npm-0.9.2-d8cafe6cc3-78c0aad8ad.zip/node_modules/async/",
+          "packageDependencies": [
+            ["async", "npm:0.9.2"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["asynckit", [
         ["npm:0.4.0", {
           "packageLocation": "./.yarn/cache/asynckit-npm-0.4.0-c718858525-a024000b9d.zip/node_modules/asynckit/",
@@ -2307,6 +2317,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["ejs", [
+        ["npm:3.1.6", {
+          "packageLocation": "./.yarn/cache/ejs-npm-3.1.6-03db39fd15-cb77a9368e.zip/node_modules/ejs/",
+          "packageDependencies": [
+            ["ejs", "npm:3.1.6"],
+            ["jake", "npm:10.8.2"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["electron-to-chromium", [
         ["npm:1.3.680", {
           "packageLocation": "./.yarn/cache/electron-to-chromium-npm-1.3.680-a4b621ac31-681c4f4350.zip/node_modules/electron-to-chromium/",
@@ -2649,6 +2669,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["file-is-binary", "npm:1.0.0"],
             ["is-binary-buffer", "npm:1.0.0"],
             ["isobject", "npm:3.0.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["filelist", [
+        ["npm:1.0.2", {
+          "packageLocation": "./.yarn/cache/filelist-npm-1.0.2-d98495ab20-f8bf29d317.zip/node_modules/filelist/",
+          "packageDependencies": [
+            ["filelist", "npm:1.0.2"],
+            ["minimatch", "npm:3.0.4"]
           ],
           "linkType": "HARD",
         }]
@@ -3523,12 +3553,26 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["jake", [
+        ["npm:10.8.2", {
+          "packageLocation": "./.yarn/cache/jake-npm-10.8.2-e211473cb9-c60d3f491c.zip/node_modules/jake/",
+          "packageDependencies": [
+            ["jake", "npm:10.8.2"],
+            ["async", "npm:0.9.2"],
+            ["chalk", "npm:2.4.2"],
+            ["filelist", "npm:1.0.2"],
+            ["minimatch", "npm:3.0.4"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["jam-my-stack", [
         ["workspace:.", {
           "packageLocation": "./",
           "packageDependencies": [
             ["jam-my-stack", "workspace:."],
             ["dayjs", "npm:1.10.4"],
+            ["ejs", "npm:3.1.6"],
             ["ent", "npm:2.2.0"],
             ["fast-xml-parser", "npm:3.18.0"],
             ["got", "npm:11.8.2"],

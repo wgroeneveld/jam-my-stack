@@ -9,5 +9,32 @@ date: \\"2021-03-01T19:03:35\\"
 ---
 
 I pulled the Google plug and installed LineageOS: <a href=\\"https://brainbaking.com/post/2021/03/getting-rid-of-tracking-using-lineageos/\\" rel=\\"ugc\\">https://brainbaking.com/post/2021/03/getting-rid-of-tracking-using-lineageos/</a> Very impressed so far! Also rely on my own CalDAV server to replace GCalendar. Any others here running <a class=\\"hashtag\\" data-tag=\\"lineageos\\" href=\\"https://chat.brainbaking.com/tag/lineageos\\" rel=\\"tag ugc\\">#lineageos</a> for privacy reasons?
-  "
+"
+`;
+
+exports[`mastodon feed parser tests parse embedded images 1`] = `
+"---
+source: \\"https://chat.brainbaking.com/objects/a51e13ce-d618-4602-84f7-f398126510ff\\"
+context: \\"\\"
+title: \\"Enjoyed an afternoon of oldskool Diablo II on the ...\\"
+date: \\"2021-03-14T17:41:53\\"
+---
+
+Enjoyed an afternoon of oldskool Diablo II on the Europebattle servers. We did a few Mephisto runs, managed to hit Hell, and I re-converetd my druid into a windy one. Good times!
+
+<div class=\\"flex\\">
+
+<div>
+<a class=\\"lbox\\" href=\\"https://chat.brainbaking.com/media/6f8b72ca-9bfb-460b-9609-c4298a8cab2b/EuropeBattle%202021-03-14%2016-20-36-87.jpg\\">
+<img src=\\"https://chat.brainbaking.com/media/6f8b72ca-9bfb-460b-9609-c4298a8cab2b/EuropeBattle%202021-03-14%2016-20-36-87.jpg\\" alt=\\"Enclosed Toot image\\">
+</a>
+</div>
+
+<div>
+<a class=\\"lbox\\" href=\\"https://chat.brainbaking.com/media/3dbcb044-2acc-4ace-a4f6-37ce94c3f2b1/EuropeBattle%202021-03-14%2015-35-01-56.jpg\\">
+<img src=\\"https://chat.brainbaking.com/media/3dbcb044-2acc-4ace-a4f6-37ce94c3f2b1/EuropeBattle%202021-03-14%2015-35-01-56.jpg\\" alt=\\"Enclosed Toot image\\">
+</a>
+</div>
+
+</div>"
 `;

@@ -18,9 +18,20 @@ describe("mastodon feed parser tests", () => {
 		fs.mkdirSync(dumpdir)
 	});
 
+	test("parse embedded images", async () => {
+		await parseMastoFeed({
+			url: "masto-feed-images",
+			notesdir: dumpdir,
+			utcOffset: 1
+		})
+
+		const actualMd = (await fsp.readFile(`${dumpdir}/2021/03/14h17m41s53.md`)).toString()
+		expect(actualMd).toMatchSnapshot()
+	})
+
 	test("parse trims title according to config and adds three dots", async () => {
 		await parseMastoFeed({
-			url: "invalid",
+			url: "masto-feed-sample",
 			notesdir: dumpdir,
 			utcOffset: 0,
 			titleCount: 5,
@@ -35,7 +46,7 @@ describe("mastodon feed parser tests", () => {
 
 	test("parse does not trim if titleCount > title length and does not add three dots", async () => {
 		await parseMastoFeed({
-			url: "invalid",
+			url: "masto-feed-sample",
 			notesdir: dumpdir,
 			utcOffset: 0,
 			titleCount: 5000
@@ -49,7 +60,7 @@ describe("mastodon feed parser tests", () => {
 
 	test("parse creates separate notes in each month subdir", async () => {
 		await parseMastoFeed({
-			url: "invalid",
+			url: "masto-feed-sample",
 			notesdir: dumpdir
 		})
 
@@ -61,7 +72,7 @@ describe("mastodon feed parser tests", () => {
 
 	test("parse creates correct MD structure", async () => {
 		await parseMastoFeed({
-			url: "invalid",
+			url: "masto-feed-sample",
 			notesdir: dumpdir,
 			utcOffset: 0,
 			titleCount: 5000			
@@ -74,7 +85,7 @@ describe("mastodon feed parser tests", () => {
 	test("parse creates MD with context if in-reply-to", async () => {
 		//https://aus.social/users/aussocialadmin/statuses/105817435308293091
 		await parseMastoFeed({
-			url: "invalid",
+			url: "masto-feed-sample",
 			notesdir: dumpdir,
 			utcOffset: 0,
 			titleCount: 5000			
