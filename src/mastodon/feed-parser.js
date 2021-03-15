@@ -1,9 +1,13 @@
 const ejs = require('ejs');
+const templates = require('./templates');
+
 const got = require("got");
 const parser = require("fast-xml-parser");
-const { readFileSync, writeFileSync, existsSync, mkdirSync } = require('fs');
 const ent = require('ent');
+
+const { writeFileSync, existsSync, mkdirSync } = require('fs');
 const { getFiles } = require('./../file-utils');
+
 const dayjs = require('dayjs');
 const utc = require('dayjs/plugin/utc');
 dayjs.extend(utc);
@@ -17,29 +21,15 @@ function stripBeforeLastSlash(str) {
   return str.substring(str.lastIndexOf('/') + 1, str.length)
 }
 
-function tmpl(filename, data) {
-  const template = readFileSync(filename).toString()
-  return ejs.render(template, data, {
-    rmWhitespace: true
-  })  
-}
-
 function convertAtomItemToMd(item, notesdir) {
   const path = `${notesdir}/${item.year}/${item.month}`
   if(!existsSync(`${notesdir}/${item.year}`)) mkdirSync(`${notesdir}/${item.year}`)
   if(!existsSync(path)) mkdirSync(path)
 
-  let mddata = `---
-source: "${item.url}"
-context: "${item.context}"
-title: "${item.title}"
-date: "${item.year}-${item.month}-${item.day}T${item.date.format("HH:mm:ss")}"
----
+  let mddata = ejs.render(templates.markdown, { item })
 
-${item.content}
-`
   if(item.media.length > 0) {
-    mddata += '\n' + tmpl('./src/mastodon/render-enclosures.ejs', { images: item.media })
+    mddata += '\n' + ejs.render(templates.enclosures, { images: item.media }, { rmWhitespace: true })
   }
 
   writeFileSync(`${path}/${item.hash}.md`, mddata, 'utf-8')
