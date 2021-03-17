@@ -160,3 +160,12 @@ In cooperation with https://github.com/wgroeneveld/serve-my-jams
 Calls the get webmention endpoint, sorts by date, adds metadata such as relative date (`x days ago`, property `publishedFromNow`), and returns data. Could be written in a `data` folder for Hugo to parse, for example. 
 
 Parameters: just one, the `domain`.
+
+#### 5.1 `send`
+
+Calls the set webmention endpoint using a `PUT`. Based on the RSS feed located at `/index.xml`, see the [serve-my-jams](github.com/wgroeneveld/serve-my-jams) README. 
+
+Parameters: just two:
+
+1. `domain` (see 5.1)
+2. `configfile` location where an ISO-formatted datetime property is kept. 

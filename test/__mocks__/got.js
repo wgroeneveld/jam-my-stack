@@ -14,4 +14,10 @@ async function got(url) {
 	return result
 }
 
+async function gotPutMock(url, opts) {
+	
+}
+
+got.put = gotPutMock
+
 module.exports = got

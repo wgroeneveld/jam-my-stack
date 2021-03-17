@@ -2,7 +2,9 @@ const { parseMastoFeed } = require('./mastodon/feed-parser')
 const { widgetify } = require('./goodreads/widgetify.js')
 const { buildIndex } = require('./lunr/index-builder.js')
 const { howlong } = require('./howlongtobeat/howlong.js')
+
 const { getWebmentions } = require('./webmention/get.js')
+const { sendWebmentions } = require('./webmention/send.js')
 
 module.exports = {
 	mastodon: {
@@ -18,6 +20,7 @@ module.exports = {
 		howlong: howlong
 	},
 	webmention: {
-		getWebmentions: getWebmentions
+		getWebmentions: getWebmentions,
+		send: sendWebmentions
 	}
 };
