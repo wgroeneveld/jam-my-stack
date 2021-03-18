@@ -29,6 +29,19 @@ describe("mastodon feed parser tests", () => {
 		expect(actualMd).toMatchSnapshot()
 	})
 
+	test("parse prepends double quotes with backlash to escape in frontmatter", async () => {
+		await parseMastoFeed({
+			url: "masto-feed-quote",
+			notesdir: dumpdir,
+			utcOffset: 0
+		})
+
+		const actualMd = await fsp.readFile(`${dumpdir}/2021/03/02h16m18s46.md`)
+		
+		const md = frontMatterParser.parseSync(actualMd.toString())
+		expect(md.data.title).toBe("\"wow this sucks\" with quotes")
+	})
+
 	test("parse trims title according to config and adds three dots", async () => {
 		await parseMastoFeed({
 			url: "masto-feed-sample",
