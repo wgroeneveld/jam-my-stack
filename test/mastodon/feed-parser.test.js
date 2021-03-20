@@ -37,7 +37,7 @@ describe("mastodon feed parser tests", () => {
 			})
 
 			dir = await fsp.readdir(`${dumpdir}/2021/03`, { withFileTypes: true })
-			expect(dir.length).toBe(2)		
+			expect(dir.length).toBe(3)		
 		})
 	})
 

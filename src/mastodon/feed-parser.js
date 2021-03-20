@@ -101,7 +101,7 @@ async function parseMastoFeed(options) {
       day
     }
   })
-    .filter(itm => ignoreReplies ? itm.context .length > 0 : true)
+    .filter(itm => ignoreReplies ? !itm.context : true)
     .filter(itm => !notes.includes(`${itm.year}/${itm.month}/${itm.hash}`))
     .forEach(itm => convertAtomItemToMd(itm, notesdir))
 }

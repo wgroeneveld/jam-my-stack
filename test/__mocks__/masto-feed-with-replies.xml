@@ -33,6 +33,68 @@
 
   
     <link rel="next" href="https://chat.brainbaking.com/users/wouter/feed.atom?max_id=A4fIjNa6N1OJmaSMAS" type="application/atom+xml"/>
+
+  <entry>
+  <activity:object-type>http://activitystrea.ms/schema/1.0/note</activity:object-type>
+  <activity:verb>http://activitystrea.ms/schema/1.0/post</activity:verb>
+  <id>https://chat.brainbaking.com/objects/b5b67e88-eda8-45dd-ab8f-54443b62e250</id>
+  <title>@houkimenator   Aren&amp;#39;t you forgetting that it is (mostly) the state that makes sure universit...</title>
+  <content type="html">&lt;span class=&quot;h-card&quot;&gt;&lt;a class=&quot;u-url mention&quot; data-user=&quot;A5OhJ18LyRGm37qKgK&quot; href=&quot;https://mastodon.technology/@houkimenator&quot; rel=&quot;ugc&quot;&gt;@&lt;span&gt;houkimenator&lt;/span&gt;&lt;/a&gt;&lt;/span&gt; &lt;br&gt;&lt;br&gt;Aren&amp;#39;t you forgetting that it is (mostly) the state that makes sure universities receive funding to be able to do the research in the first place? Curious to see your view on that &amp;#39;free&amp;#39; ecosystem in the future. I hope you aren&amp;#39;t insinuating to privatize that fund flow. &lt;br&gt;&lt;br&gt;&lt;span class=&quot;h-card&quot;&gt;&lt;a class=&quot;u-url mention&quot; data-user=&quot;A58Lcc2JgjJWTxbCxU&quot; href=&quot;https://mastodon.social/@fribbledom&quot; rel=&quot;ugc&quot;&gt;@&lt;span&gt;fribbledom&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;</content>
+  <published>2021-03-20T11:12:08.955177Z</published>
+  <updated>2021-03-20T11:12:08.955177Z</updated>
+  <ostatus:conversation ref="tag:mastodon.social,2021-03-20:objectId=227433498:objectType=Conversation">
+    tag:mastodon.social,2021-03-20:objectId=227433498:objectType=Conversation
+  </ostatus:conversation>
+  <link href="tag:mastodon.social,2021-03-20:objectId=227433498:objectType=Conversation" rel="ostatus:conversation"/>
+
+  
+    <summary></summary>
+  
+
+  
+    <link type="application/atom+xml" href='https://chat.brainbaking.com/objects/b5b67e88-eda8-45dd-ab8f-54443b62e250' rel="self"/>
+    <link type="text/html" href='https://chat.brainbaking.com/objects/b5b67e88-eda8-45dd-ab8f-54443b62e250' rel="alternate"/>
+  
+
+  
+
+  
+
+  
+    <thr:in-reply-to ref='https://mastodon.technology/users/houkimenator/statuses/105921465093697801' href='https://mastodon.technology/users/houkimenator/statuses/105921465093697801'/>
+  
+
+  
+    
+      
+        <link rel="mentioned" ostatus:object-type="http://activitystrea.ms/schema/1.0/person" href="https://mastodon.technology/users/houkimenator"/>
+      
+    
+  
+    
+      <link rel="mentioned" ostatus:object-type="http://activitystrea.ms/schema/1.0/collection" href="http://activityschema.org/collection/public"/>
+    
+  
+    
+      
+        <link rel="mentioned" ostatus:object-type="http://activitystrea.ms/schema/1.0/person" href="https://mastodon.social/users/fribbledom"/>
+      
+    
+  
+    
+      
+    
+  
+    
+      
+        <link rel="mentioned" ostatus:object-type="http://activitystrea.ms/schema/1.0/person" href="https://chat.brainbaking.com/users/wouter"/>
+      
+    
+  
+
+  
+</entry>
+    
   <entry>
   <activity:object-type>http://activitystrea.ms/schema/1.0/note</activity:object-type>
   <activity:verb>http://activitystrea.ms/schema/1.0/post</activity:verb>
