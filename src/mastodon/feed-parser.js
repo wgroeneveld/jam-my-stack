@@ -50,9 +50,10 @@ function trimIfNeeded(title, count, prefix) {
 //  utcOffset = 60 (in minutes)
 //  titleCount = 50
 //  titlePrefix = "Note: "
+//  ignoreReplies = false
 
 async function parseMastoFeed(options) {
-  const { notesdir, url, utcOffset = 60, titleCount = 50, titlePrefix = "" } = options
+  const { notesdir, url, utcOffset = 60, titleCount = 50, titlePrefix = "", ignoreReplies = false } = options
 
   const notesroot = await getFiles(notesdir)
   const notes = notesroot
@@ -100,6 +101,7 @@ async function parseMastoFeed(options) {
       day
     }
   })
+    .filter(itm => ignoreReplies ? itm.context .length > 0 : true)
     .filter(itm => !notes.includes(`${itm.year}/${itm.month}/${itm.hash}`))
     .forEach(itm => convertAtomItemToMd(itm, notesdir))
 }

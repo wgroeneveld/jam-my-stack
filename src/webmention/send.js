@@ -20,6 +20,7 @@ async function getSince(configfile) {
 async function updateSince(configfile) {
 	const since = new Date().toISOString()
 	await fsp.writeFile(configfile, JSON.stringify({ since }, null, 2), 'utf-8')
+	return since
 }
 
 async function sendWebmentions(domain, configfile) {
@@ -28,7 +29,8 @@ async function sendWebmentions(domain, configfile) {
 
 	// this is an async call and will return 202 to say "started sending them out".
 	const result = await got.put(url)
-	await updateSince(configfile)
+	const updatedSince = await updateSince(configfile)
+	return updatedSince
 }
 
 module.exports = {

@@ -18,6 +18,29 @@ describe("mastodon feed parser tests", () => {
 		fs.mkdirSync(dumpdir)
 	});
 
+	describe("ignore replies option", () => {
+		test("ignore replies if ignoreReplies is set to true", async () => {
+			await parseMastoFeed({
+				url: "masto-feed-with-replies",
+				notesdir: dumpdir,
+				ignoreReplies: true
+			})
+
+			dir = await fsp.readdir(`${dumpdir}/2021/03`, { withFileTypes: true })
+			expect(dir.length).toBe(1)		
+		})
+		test("does not ignore replies if ignoreReplies is set to false", async () => {
+			await parseMastoFeed({
+				url: "masto-feed-with-replies",
+				notesdir: dumpdir,
+				ignoreReplies: false
+			})
+
+			dir = await fsp.readdir(`${dumpdir}/2021/03`, { withFileTypes: true })
+			expect(dir.length).toBe(2)		
+		})
+	})
+
 	test("parse embedded images", async () => {
 		await parseMastoFeed({
 			url: "masto-feed-images",
