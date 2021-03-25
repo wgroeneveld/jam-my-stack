@@ -16,7 +16,6 @@ async function getWebmentions(domain) {
 	const json = JSON.parse(result.body).json
 
 	json.forEach(mention => {
-		mention.publishedFromNow = dayjs(mention.published).fromNow()
 		mention.relativeTarget = mention.target.substring(mention.target.indexOf(domain) + domain.length, mention.target.length)
 	})
 
