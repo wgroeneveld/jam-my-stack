@@ -1,9 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`mastodon feed parser tests parse creates MD with context if in-reply-to 1`] = `
+"---
+source: \\"https://chat.brainbaking.com/objects/2e58289c-f5f0-415c-b2e1-62c74662aa16\\"
+context: \\"https://social.linux.pizza/users/StampedingLonghorn/statuses/105821099684887793\\"
+title: \\"@StampedingLonghorn I tried to chase him away, but you know how that turned out... 😼 There's ...\\"
+date: \\"2021-03-02T16:18:46\\"
+---
+
+<span class=\\"h-card\\"><a class=\\"u-url mention\\" data-user=\\"A4nwg4LYyh4WgrJOXg\\" href=\\"https://social.linux.pizza/@StampedingLonghorn\\" rel=\\"ugc\\">@<span>StampedingLonghorn</span></a></span> I tried to chase him away, but you know how that turned out... 😼 There's even cat hair inside the cases... (to be clear: also unintentional)
+"
+`;
+
 exports[`mastodon feed parser tests parse creates correct MD structure 1`] = `
 "---
 source: \\"https://chat.brainbaking.com/objects/77a3ecfb-47e1-4d7a-a24a-8b779d80a8ac\\"
-context: \\"\\"
 title: \\"I pulled the Google plug and installed LineageOS: https://brainbaking.com/post/2021/03/getting-ri...\\"
 date: \\"2021-03-01T19:03:35\\"
 ---
@@ -15,7 +26,6 @@ I pulled the Google plug and installed LineageOS: <a href=\\"https://brainbaking
 exports[`mastodon feed parser tests parse embedded images 1`] = `
 "---
 source: \\"https://chat.brainbaking.com/objects/a51e13ce-d618-4602-84f7-f398126510ff\\"
-context: \\"\\"
 title: \\"Enjoyed an afternoon of oldskool Diablo II on the ...\\"
 date: \\"2021-03-14T17:41:53\\"
 ---

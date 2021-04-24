@@ -28,7 +28,7 @@ function convertAtomItemToMd(item, notesdir) {
 
   let mddata = ejs.render(templates.markdown, { item })
 
-  if(item.media.length > 0) {
+  if(item.media?.length > 0) {
     mddata += '\n' + ejs.render(templates.enclosures, { images: item.media }, { rmWhitespace: true })
   }
 
@@ -42,6 +42,23 @@ function trimIfNeeded(title, count, prefix) {
     return prefix + title.substring(0, count) + "..."
   }
   return prefix + title
+}
+
+function detectContext(item, content) {
+    // format: <thr:in-reply-to ref='https://social.linux.pizza/users/StampedingLonghorn/statuses/105821099684887793' href='https://social.linux.pizza/users/StampedingLonghorn/statuses/105821099684887793'/>
+    if(item['thr:in-reply-to']) {
+      return item['thr:in-reply-to']['@_ref']
+    }  
+    
+    // could also be: manually in text "@[<a href...]"
+    if(content.indexOf("@<a") >= 0) {
+      const res = content.match(/@<a\s(.*?)href="(.*?)".*?>/)
+      if(res.length == 3) {
+        return res[2]
+      }
+    }
+
+    return ""
 }
 
 // opts:
@@ -74,24 +91,26 @@ async function parseMastoFeed(options) {
   const entries = root.feed.entry.map ? root.feed.entry : [root.feed.entry]
   
   const items = entries.map(item => {
+    const content = ent.decode(ent.decode(item.content['#text'])) // format: &lt;span class=&quot;h-card.... 
     const date = dayjs.utc(item.published).utcOffset(utcOffset)
     const year = date.format("YYYY")
     const month = date.format("MM")
     const day = date.format("DD")
-    // format: <thr:in-reply-to ref='https://social.linux.pizza/users/StampedingLonghorn/statuses/105821099684887793' href='https://social.linux.pizza/users/StampedingLonghorn/statuses/105821099684887793'/>
-    const context = item['thr:in-reply-to'] ? item['thr:in-reply-to']['@_ref'] : ""
+    const context = detectContext(item, content)
     const title = escQuotes(ent.decode(ent.decode(item.title)))
 
     const media = item.link?.filter(l => 
       l['@_rel'] === 'enclosure' &&
       l['@_type'] === 'image/jpeg').map(l => l['@_href'])
+    
 
     // WHY double decode? &#34; = &amp;#34; - first decode '&', then the other char.'
     return { 
       title: trimIfNeeded(title, titleCount, titlePrefix), // summary (cut-off) of content
-      content: ent.decode(ent.decode(item.content['#text'])), // format: &lt;span class=&quot;h-card.... 
+      content,
       url: escQuotes(item.id), // format: https://chat.brainbaking.com/objects/0707fd54-185d-4ee7-9204-be370d57663c
       context: escQuotes(context),
+      contextFromMastodon: item['thr:in-reply-to'],
       id: stripBeforeLastSlash(item.id),
       media,
       hash: `${day}h${date.format("HH")}m${date.format("mm")}s${date.format("ss")}`,
@@ -101,7 +120,7 @@ async function parseMastoFeed(options) {
       day
     }
   })
-    .filter(itm => ignoreReplies ? !itm.context : true)
+    .filter(itm => ignoreReplies ? !itm.contextFromMastodon : true)
     .filter(itm => !notes.includes(`${itm.year}/${itm.month}/${itm.hash}`))
     .forEach(itm => convertAtomItemToMd(itm, notesdir))
 }

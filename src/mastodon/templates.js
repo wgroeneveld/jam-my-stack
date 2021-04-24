@@ -1,7 +1,9 @@
 
 const markdown = `---
 source: "<%- item.url %>"
+<% if (item.context) { -%>
 context: "<%- item.context %>"
+<% } -%>
 title: "<%- item.title %>"
 date: "<%- item.year %>-<%- item.month %>-<%- item.day %>T<%- item.date.format('HH:mm:ss') %>"
 ---

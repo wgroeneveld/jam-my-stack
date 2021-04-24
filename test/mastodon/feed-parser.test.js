@@ -29,6 +29,16 @@ describe("mastodon feed parser tests", () => {
 			dir = await fsp.readdir(`${dumpdir}/2021/03`, { withFileTypes: true })
 			expect(dir.length).toBe(1)		
 		})
+		test("does not ignore explicit '@url' replies if ignoreReplies is set to true", async () => {
+			await parseMastoFeed({
+				url: "masto-feed-at-url",
+				notesdir: dumpdir,
+				ignoreReplies: true
+			})
+
+			dir = await fsp.readdir(`${dumpdir}/2021/03`, { withFileTypes: true })
+			expect(dir.length).toBe(1)		
+		})
 		test("does not ignore replies if ignoreReplies is set to false", async () => {
 			await parseMastoFeed({
 				url: "masto-feed-with-replies",
@@ -127,8 +137,24 @@ describe("mastodon feed parser tests", () => {
 			titleCount: 5000			
 		})
 
-		const actualMd = await fsp.readFile(`${dumpdir}/2021/03/02h16m18s46.md`)
+		const actualMd = (await fsp.readFile(`${dumpdir}/2021/03/02h16m18s46.md`)).toString()
+		expect(actualMd).toMatchSnapshot()
 		const expectedReplyTo = "https://social.linux.pizza/users/StampedingLonghorn/statuses/105821099684887793"
+
+		const md = frontMatterParser.parseSync(actualMd)
+		expect(md.data.context).toBe(expectedReplyTo)
+	})
+
+	test("parse creates MD with context if @http(s) URL", async () => {
+		await parseMastoFeed({
+			url: "masto-feed-at-url",
+			notesdir: dumpdir,
+			utcOffset: 0,
+			titleCount: 5000			
+		})
+
+		const actualMd = await fsp.readFile(`${dumpdir}/2021/03/20h11m12s08.md`)
+		const expectedReplyTo = "https://reply-to-stuff"
 
 		const md = frontMatterParser.parseSync(actualMd.toString())
 		expect(md.data.context).toBe(expectedReplyTo)
