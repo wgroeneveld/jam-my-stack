@@ -73,7 +73,6 @@ This generates the file `01h20m03s35.md` (it assumes UTC times in the feed and a
 ```md
 ---
 source: "https://chat.brainbaking.com/objects/77a3ecfb-47e1-4d7a-a24a-8b779d80a8ac"
-context: ""
 title: "I pulled the Google plug and installed LineageOS: https://brainbaking.com/post/2021/03/getting-ri..."
 date: "2021-03-01T19:03:35"
 ---
@@ -86,6 +85,7 @@ See implementation for more details and features.
 **Also parsers**:
 
 - `<link rel="enclosure"/>` image types (see `render-enclosures.ejs`) [ejs template](https://ejs.co/), that is appended to the Markdown file if any are found. Styling is up to you...
+- `... @https://blah.com/blie hi there` - this is a **in-reply-to** toot which adds `context` frontmatter, so your html renderer can use the correct IndieWeb classes. This should also enable webmention sending since you mention the URL. If you "at" a valid Mastodon user, it will automatically do this. 
 
 ### 2. Goodreads
 
