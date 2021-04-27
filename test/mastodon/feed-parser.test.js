@@ -1,7 +1,4 @@
 
-const MockDate = require('mockdate')
-const dayjs = require('dayjs')
-
 describe("mastodon feed parser tests", () => {
 	const fs = require('fs');
 	const fsp = require('fs').promises;
@@ -15,7 +12,6 @@ describe("mastodon feed parser tests", () => {
 	const dumpdir = `${__dirname}/dump`
 
 	beforeEach(() => {
-		MockDate.reset()
 		if(fs.existsSync(dumpdir)) {
 			rmdir(dumpdir)
 		}
@@ -55,23 +51,11 @@ describe("mastodon feed parser tests", () => {
 		})
 	})
 
-	test("uses now in UTC zone if published date is invalid", async () => {
-		MockDate.set(dayjs('2021-03-11T19:01:03+00:00').toDate())
-
-		await parseMastoFeed({
-			url: "masto-feed-invalid-publishedDate",
-			notesdir: dumpdir
-		})
-
-		const actualMd = await fsp.readFile(`${dumpdir}/2021/03/11h19m01s03.md`)
-		const md = frontMatterParser.parseSync(actualMd.toString())
-		expect(md.data.date).toBe('2021-03-11T19:01:03+00:00')
-	})
-
 	test("parse embedded images", async () => {
 		await parseMastoFeed({
 			url: "masto-feed-images",
-			notesdir: dumpdir
+			notesdir: dumpdir,
+			utcOffset: 1
 		})
 
 		const actualMd = (await fsp.readFile(`${dumpdir}/2021/03/14h17m41s53.md`)).toString()
@@ -81,10 +65,11 @@ describe("mastodon feed parser tests", () => {
 	test("parse prepends double quotes with backlash to escape in frontmatter", async () => {
 		await parseMastoFeed({
 			url: "masto-feed-quote",
-			notesdir: dumpdir
+			notesdir: dumpdir,
+			utcOffset: 0
 		})
 
-		const actualMd = await fsp.readFile(`${dumpdir}/2021/03/02h17m18s46.md`)
+		const actualMd = await fsp.readFile(`${dumpdir}/2021/03/02h16m18s46.md`)
 		
 		const md = frontMatterParser.parseSync(actualMd.toString())
 		expect(md.data.title).toBe("\"wow this sucks\" with quotes")
@@ -94,11 +79,12 @@ describe("mastodon feed parser tests", () => {
 		await parseMastoFeed({
 			url: "masto-feed-sample",
 			notesdir: dumpdir,
+			utcOffset: 0,
 			titleCount: 5,
 			titlePrefix: "Note: "
 		})
 
-		const actualMd = await fsp.readFile(`${dumpdir}/2021/03/02h17m18s46.md`)
+		const actualMd = await fsp.readFile(`${dumpdir}/2021/03/02h16m18s46.md`)
 		
 		const md = frontMatterParser.parseSync(actualMd.toString())
 		expect(md.data.title).toBe("Note: @Stam...")
@@ -108,10 +94,11 @@ describe("mastodon feed parser tests", () => {
 		await parseMastoFeed({
 			url: "masto-feed-sample",
 			notesdir: dumpdir,
+			utcOffset: 0,
 			titleCount: 5000
 		})
 
-		const actualMd = await fsp.readFile(`${dumpdir}/2021/03/02h17m18s46.md`)
+		const actualMd = await fsp.readFile(`${dumpdir}/2021/03/02h16m18s46.md`)
 		
 		const md = frontMatterParser.parseSync(actualMd.toString())
 		expect(md.data.title).toBe("@StampedingLonghorn I tried to chase him away, but you know how that turned out... 😼 There's ...")
@@ -133,10 +120,11 @@ describe("mastodon feed parser tests", () => {
 		await parseMastoFeed({
 			url: "masto-feed-sample",
 			notesdir: dumpdir,
+			utcOffset: 0,
 			titleCount: 5000			
 		})
 
-		const actualMd = (await fsp.readFile(`${dumpdir}/2021/03/01h20m03s35.md`)).toString()
+		const actualMd = (await fsp.readFile(`${dumpdir}/2021/03/01h19m03s35.md`)).toString()
 		expect(actualMd).toMatchSnapshot()
 	})
 
@@ -145,10 +133,11 @@ describe("mastodon feed parser tests", () => {
 		await parseMastoFeed({
 			url: "masto-feed-sample",
 			notesdir: dumpdir,
+			utcOffset: 0,
 			titleCount: 5000			
 		})
 
-		const actualMd = (await fsp.readFile(`${dumpdir}/2021/03/02h17m18s46.md`)).toString()
+		const actualMd = (await fsp.readFile(`${dumpdir}/2021/03/02h16m18s46.md`)).toString()
 		expect(actualMd).toMatchSnapshot()
 		const expectedReplyTo = "https://social.linux.pizza/users/StampedingLonghorn/statuses/105821099684887793"
 
@@ -160,10 +149,11 @@ describe("mastodon feed parser tests", () => {
 		await parseMastoFeed({
 			url: "masto-feed-at-url",
 			notesdir: dumpdir,
+			utcOffset: 0,
 			titleCount: 5000			
 		})
 
-		const actualMd = await fsp.readFile(`${dumpdir}/2021/03/20h12m12s08.md`)
+		const actualMd = await fsp.readFile(`${dumpdir}/2021/03/20h11m12s08.md`)
 		const expectedReplyTo = "https://reply-to-stuff"
 
 		const md = frontMatterParser.parseSync(actualMd.toString())

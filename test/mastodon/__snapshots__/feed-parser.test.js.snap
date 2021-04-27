@@ -5,7 +5,7 @@ exports[`mastodon feed parser tests parse creates MD with context if in-reply-to
 source: \\"https://chat.brainbaking.com/objects/2e58289c-f5f0-415c-b2e1-62c74662aa16\\"
 context: \\"https://social.linux.pizza/users/StampedingLonghorn/statuses/105821099684887793\\"
 title: \\"@StampedingLonghorn I tried to chase him away, but you know how that turned out... 😼 There's ...\\"
-date: \\"2021-03-02T17:18:46+01:00\\"
+date: \\"2021-03-02T16:18:46\\"
 ---
 
 <span class=\\"h-card\\"><a class=\\"u-url mention\\" data-user=\\"A4nwg4LYyh4WgrJOXg\\" href=\\"https://social.linux.pizza/@StampedingLonghorn\\" rel=\\"ugc\\">@<span>StampedingLonghorn</span></a></span> I tried to chase him away, but you know how that turned out... 😼 There's even cat hair inside the cases... (to be clear: also unintentional)
@@ -16,7 +16,7 @@ exports[`mastodon feed parser tests parse creates correct MD structure 1`] = `
 "---
 source: \\"https://chat.brainbaking.com/objects/77a3ecfb-47e1-4d7a-a24a-8b779d80a8ac\\"
 title: \\"I pulled the Google plug and installed LineageOS: https://brainbaking.com/post/2021/03/getting-ri...\\"
-date: \\"2021-03-01T20:03:35+01:00\\"
+date: \\"2021-03-01T19:03:35\\"
 ---
 
 I pulled the Google plug and installed LineageOS: <a href=\\"https://brainbaking.com/post/2021/03/getting-rid-of-tracking-using-lineageos/\\" rel=\\"ugc\\">https://brainbaking.com/post/2021/03/getting-rid-of-tracking-using-lineageos/</a> Very impressed so far! Also rely on my own CalDAV server to replace GCalendar. Any others here running <a class=\\"hashtag\\" data-tag=\\"lineageos\\" href=\\"https://chat.brainbaking.com/tag/lineageos\\" rel=\\"tag ugc\\">#lineageos</a> for privacy reasons?
@@ -27,7 +27,7 @@ exports[`mastodon feed parser tests parse embedded images 1`] = `
 "---
 source: \\"https://chat.brainbaking.com/objects/a51e13ce-d618-4602-84f7-f398126510ff\\"
 title: \\"Enjoyed an afternoon of oldskool Diablo II on the ...\\"
-date: \\"2021-03-14T17:41:53+01:00\\"
+date: \\"2021-03-14T17:41:53\\"
 ---
 
 Enjoyed an afternoon of oldskool Diablo II on the Europebattle servers. We did a few Mephisto runs, managed to hit Hell, and I re-converetd my druid into a windy one. Good times!
