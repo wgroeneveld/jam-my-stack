@@ -6,6 +6,10 @@ Published at https://www.npmjs.com/package/jam-my-stack
 
 [![npm version](https://badge.fury.io/js/jam-my-stack.svg)](https://badge.fury.io/js/jam-my-stack)
 
+Release notes: see `RELEASE.md`
+
+---
+
 These simple scripts **enrich your Jamstack-site** by adding/manipulating/whatever (meta)data, such as extra posts, indexing, and so forth. A primary example of these tools in action is my own site https://brainbaking.com - inspect how it's used at https://github.com/wgroeneveld/brainbaking 
 
 **Are you looking for a way to receive webmentions?** See https://github.com/wgroeneveld/serve-my-jams !
@@ -29,7 +33,6 @@ Usage example:
     await mastodon.parseFeed({
         notesdir: `${__dirname}/content/notes`,
         url: "https://chat.brainbaking.com/users/wouter/feed",
-        utcOffset: 60,
         titleCount: 50,
         titlePrefix: "Note: "
     })
@@ -37,7 +40,6 @@ Usage example:
 
 Options and their default values: 
 
-- `utcOffset`: `60` (= GMT+1, that's where I am!) (in **minutes**, see [day.js docs](https://day.js.org/docs/en/manipulate/utc-offset)
 - `titleCount`: `50`. Will add "..." and trim if title length bigger.
 - `titlePrefix`: `""`. Will add before title (e.g. "Note: ")
 - `ignoreReplies`: `false`. If true, will not process `in-reply-to` items.
@@ -68,13 +70,13 @@ Example feed entry:
 </entry>
 ```
 
-This generates the file `01h20m03s35.md` (it assumes UTC times in the feed and adjusts according to specified `utcOffset`, such as GMT+1 in this example), with contents:
+This generates the file `01h19m03s35.md` with contents:
 
 ```md
 ---
 source: "https://chat.brainbaking.com/objects/77a3ecfb-47e1-4d7a-a24a-8b779d80a8ac"
 title: "I pulled the Google plug and installed LineageOS: https://brainbaking.com/post/2021/03/getting-ri..."
-date: "2021-03-01T19:03:35"
+date: "2021-03-01T19:03:35+01:00"
 ---
 
 I pulled the Google plug and installed LineageOS: <a href="https://brainbaking.com/post/2021/03/getting-rid-of-tracking-using-lineageos/" rel="ugc">https://brainbaking.com/post/2021/03/getting-rid-of-tracking-using-lineageos/</a> Very impressed so far! Also rely on my own CalDAV server to replace GCalendar. Any others here running <a class="hashtag" data-tag="lineageos" href="https://chat.brainbaking.com/tag/lineageos" rel="tag ugc">#lineageos</a> for privacy reasons?
@@ -86,6 +88,7 @@ See implementation for more details and features.
 
 - `<link rel="enclosure"/>` image types (see `render-enclosures.ejs`) [ejs template](https://ejs.co/), that is appended to the Markdown file if any are found. Styling is up to you...
 - `... @https://blah.com/blie hi there` - this is a **in-reply-to** toot which adds `context` frontmatter, so your html renderer can use the correct IndieWeb classes. This should also enable webmention sending since you mention the URL. If you "at" a valid Mastodon user, it will automatically do this. 
+- On the `published` date: Mastodon feeds generate **ISO8601** timestamps with timezones. This is preserved in the resulting frontmatter using [dayjs](https://day.js.org/docs/en/display/format).
 
 ### 2. Goodreads
 

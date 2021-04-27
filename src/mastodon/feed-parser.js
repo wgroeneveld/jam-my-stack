@@ -26,6 +26,8 @@ function convertAtomItemToMd(item, notesdir) {
   if(!existsSync(`${notesdir}/${item.year}`)) mkdirSync(`${notesdir}/${item.year}`)
   if(!existsSync(path)) mkdirSync(path)
 
+  // dates are formatted using dayjs.format() in ISO8601
+  // see https://day.js.org/docs/en/display/format
   let mddata = ejs.render(templates.markdown, { item })
 
   if(item.media?.length > 0) {
@@ -64,13 +66,12 @@ function detectContext(item, content) {
 // opts:
 //  notesdir = `${__dirname}/content/notes`
 //  url = "https://chat.brainbaking.com/users/wouter/feed";
-//  utcOffset = 60 (in minutes)
 //  titleCount = 50
 //  titlePrefix = "Note: "
 //  ignoreReplies = false
 
 async function parseMastoFeed(options) {
-  const { notesdir, url, utcOffset = 60, titleCount = 50, titlePrefix = "", ignoreReplies = false } = options
+  const { notesdir, url, titleCount = 50, titlePrefix = "", ignoreReplies = false } = options
 
   const notesroot = await getFiles(notesdir)
   const notes = notesroot
@@ -92,7 +93,10 @@ async function parseMastoFeed(options) {
   
   const items = entries.map(item => {
     const content = ent.decode(ent.decode(item.content['#text'])) // format: &lt;span class=&quot;h-card.... 
-    const date = dayjs.utc(item.published).utcOffset(utcOffset)
+    let date = dayjs(item.published)
+    if(!date.isValid()) {
+      date = dayjs.utc()
+    }
     const year = date.format("YYYY")
     const month = date.format("MM")
     const day = date.format("DD")
@@ -114,7 +118,7 @@ async function parseMastoFeed(options) {
       id: stripBeforeLastSlash(item.id),
       media,
       hash: `${day}h${date.format("HH")}m${date.format("mm")}s${date.format("ss")}`,
-      date, // format: 2021-03-02T16:18:46.658056Z
+      date, // format: 2021-03-02T16:18:46.658056Z - KEEP timezones!
       year,
       month,
       day

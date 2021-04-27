@@ -1,11 +1,12 @@
 
+// warning, without explicitly providing the ISO8601 format, dayjs.utc() formats differently!!
 const markdown = `---
 source: "<%- item.url %>"
 <% if (item.context) { -%>
 context: "<%- item.context %>"
 <% } -%>
 title: "<%- item.title %>"
-date: "<%- item.year %>-<%- item.month %>-<%- item.day %>T<%- item.date.format('HH:mm:ss') %>"
+date: "<%- item.date.format('YYYY-MM-DDTHH:mm:ssZ') %>"
 ---
 
 <%- item.content %>
