@@ -25,11 +25,11 @@ describe("mastodon feed parser end to end scenario test", () => {
 		})
 
 		const dirroot = await fsp.readdir(`${dumpdir}`, { withFileTypes: true })
-		expect(dirroot.length).toBe(1)
+		expect(dirroot.length).not.toBe(0)
 		const year = dirroot[0].name
 
 		const dirmonth = await fsp.readdir(`${dumpdir}/${year}`, { withFileTypes: true })
-		expect(dirmonth.length).toBe(1)
+		expect(dirmonth.length).not.toBe(0)
 		const month = dirmonth[0].name
 
 		const dir = await fsp.readdir(`${dumpdir}/${year}/${month}`, { withFileTypes: true })

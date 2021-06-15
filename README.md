@@ -168,3 +168,18 @@ Calls the set webmention endpoint using a `PUT`. Based on the RSS feed located a
 
 Parameters: just one, the `domain`.
 
+### 6. YouTube
+
+Thanks to ideas from [rubenerd.com](https://rubenerd.com) and his [video.sh script](https://gitlab.com/rubenerd/rubenerd.com/-/blob/trunk/scripts/video.sh). This downloads a thumbnail using `youtube-dl`, smacks a play button on it using `convert`, and stores that in the specified folder. Use in conjunction with a Hugo shortcode to get rid of YouTube's iframes!
+
+Usage example:
+
+```js
+  await download({
+    postDir: 'somewhere/posts',
+    downloadDir: 'static/youtube-thumbs',
+    overlayImg: 'playbtn.png'
+  })
+```
+It scans all `.md` files in the posts dir for `{{< youtube xxx >}}` shortcodes. 
+
