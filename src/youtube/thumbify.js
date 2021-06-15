@@ -15,27 +15,17 @@ async function downloadThumbnail(youtubeid, downloadDir, overlayImg) {
   console.log(` -- downloading YouTube ${youtubeid} thumb...`)
   const fStream = createWriteStream(dlLoc)
 
+
   const done = new Promise(function(resolve, reject) {
     fStream.on('finish', () => {
       var args = [
-        "-resize",
-        "700x400",
-        dlLoc,
-        "+repage",
-        "+page",
-        overlayImg,
-        "-flatten",
-        dlLoc
+        "-resize", "700x400", dlLoc,
+        "+repage", "+page", overlayImg, "-flatten", dlLoc
       ]
-      //console.log(`convert ${args}`)
       im.convert(args, function(err) {
         if(err) reject(err)
         resolve()
       })
-    })
-    fStream.on('error', () => {
-      unlinkSync(dlLoc)
-      reject()
     })
 
     youtubedl(`https://www.youtube.com/watch?v=${youtubeid}`, {
@@ -46,8 +36,13 @@ async function downloadThumbnail(youtubeid, downloadDir, overlayImg) {
       got.stream(url).pipe(fStream)
     })
     .catch(err => {
-      unlinkSync(dlLoc)
-      reject(err)
+      // What the fuck. destroy() does not release: https://github.com/nodejs/node/issues/31776
+      fStream.end()
+      fStream.destroy()
+      fStream.on('close', () => {
+        if(existsSync(dlLoc)) unlinkSync(dlLoc)
+        reject(err)
+      })
     })
   })
   

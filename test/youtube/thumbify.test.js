@@ -6,6 +6,7 @@ const { getFiles } = require('../../src/file-utils');
 
 const dumpdir = `${__dirname}/youtubeposts-stub`
 
+jest.mock('youtube-dl-exec')
 jest.disableAutomock()
 jest.unmock('got')
 
@@ -43,7 +44,7 @@ title: "wizardry 8 review"
 
 here's a post
 
-{{< youtube lol >}}
+{{< youtube exception >}}
 
 tsjek it out nog ene
 
