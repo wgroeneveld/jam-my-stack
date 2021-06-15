@@ -1,4 +1,4 @@
-const { download } = require('../../src/youtube/thumbify.js')
+const { thumbify } = require('../../src/youtube/thumbify.js')
 const fs = require('fs');
 const fsp = require('fs').promises;
 const { rmdir } = require('./../utils')
@@ -27,7 +27,7 @@ it doesn't contain a link, sorry...
 `
 
 	await fsp.writeFile(`${dumpdir}/post.md`, md, 'utf-8')
-	await download({
+	await thumbify({
 		postDir: dumpdir,
 		downloadDir: dumpdir,
 		overlayImg: `${__dirname}/play.png`
@@ -53,7 +53,7 @@ cool vid eh?
 `
 
 	await fsp.writeFile(`${dumpdir}/post.md`, md, 'utf-8')
-	await download({
+	await thumbify({
 		postDir: dumpdir,
 		downloadDir: dumpdir,
 		overlayImg: `${__dirname}/play.png`
@@ -79,7 +79,7 @@ cool vid eh?
 `
 
 	await fsp.writeFile(`${dumpdir}/post.md`, md, 'utf-8')
-	await download({
+	await thumbify({
 		postDir: dumpdir,
 		downloadDir: dumpdir,
 		overlayImg: `${__dirname}/play.png`
@@ -101,7 +101,7 @@ cool vid eh?
 `
 
 	await fsp.writeFile(`${dumpdir}/post.md`, md, 'utf-8')
-	await download({
+	await thumbify({
 		postDir: dumpdir,
 		downloadDir: dumpdir,
 		overlayImg: `${__dirname}/play.png`

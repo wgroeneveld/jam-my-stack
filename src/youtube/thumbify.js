@@ -87,5 +87,5 @@ async function run(options) {
 }
 
 module.exports = {
-  download: run
+  thumbify: run
 }
