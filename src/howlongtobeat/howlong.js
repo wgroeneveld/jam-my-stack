@@ -3,12 +3,15 @@ const hltbService = new hltb.HowLongToBeatService()
 
 const { getFiles } = require('./../file-utils');
 const fs = require('fs').promises;
-
+const got = require("got");
 const {promisify} = require('util');
 const frontMatterParser = require('parser-front-matter');
 
 const parse = promisify(frontMatterParser.parse.bind(frontMatterParser));
 
+const stream = require('stream');
+const pipeline = promisify(stream.pipeline);
+const { createWriteStream } = require("fs");
 
 async function loadPostsWithFrontMatter(postsDirectoryPath) {
   const postNames = await getFiles(postsDirectoryPath);
@@ -27,22 +30,37 @@ async function loadPostsWithFrontMatter(postsDirectoryPath) {
   return posts;
 }
 
-async function fillInHowLongToBeat(posts) {
+async function downloadThumbnail(url, id, dir) {
+  console.log(`   --- downloading thumbnail ${url} of id ${id}...`)
+  await pipeline(
+    got.stream(url),
+    createWriteStream(`${dir}/${id}.jpg`)
+  )
+}
+
+async function fillInHowLongToBeat(posts, downloadDir) {
   for(post of posts) {
     const results = await hltbService.search(post.game)
 
     if(results.length > 0) {
-      post.howlongtobeat = results[0].gameplayMain
-      post.howlongtobeat_id = results[0].id
-    }      
+      const game = results[0]
+      post.howlongtobeat = game.gameplayMain
+      post.howlongtobeat_id = game.id
+
+      if(downloadDir) {
+        await downloadThumbnail(game.imageUrl, game.id, downloadDir)
+      }
+    }   
   }
 }
 
-async function run(dir) {
-  console.log(`-- SCANNING not yet processed articles in ${dir} for game_name --`)
-  let posts = await loadPostsWithFrontMatter(dir)
+async function run(options) {
+  const { postDir, downloadDir } = options
+
+  console.log(`-- SCANNING not yet processed articles in ${postDir} for game_name --`)
+  let posts = await loadPostsWithFrontMatter(postDir)
   posts = posts.filter(post => post.game && !post.howlongtobeat_id)
-  await fillInHowLongToBeat(posts)
+  await fillInHowLongToBeat(posts, downloadDir)
 
   for(post of posts) {
     let data = await fs.readFile(post.file, 'utf8')

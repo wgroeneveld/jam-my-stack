@@ -5,7 +5,8 @@ class HowLongToBeatService {
 	async search(game) {
 		return [{
 			gameplayMain: 93,
-			id: 11228
+			id: 11228,
+			imageUrl: "https://jefklakscodex.com/img/logo.png"
 		}]
 	}
 }

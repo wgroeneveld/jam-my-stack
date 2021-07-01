@@ -121,6 +121,8 @@ Usage example:
 
 Adds https://howlongtobeat.com/ game length (`MainGame`) and an ID to your front matter (keys `howlongtobeat_id` and `howlongtobeat_hrs`), provided you first added a property called `game_name`. (This gets substituted).
 
+It also downloads a thumbnail of the cover image if you provided the dir as an option. 
+
 So, Frontmatter like this:
 
 ```
@@ -145,7 +147,9 @@ In your Hugo template, add a link to `https://howlongtobeat.com/game?id={howlong
 Usage example:
 
 ```js
-  await howlong(`${__dirname}/content/articles`)
+  await howlong({
+    postDir: `${__dirname}/content/articles`,
+    downloadDir: `${__dirname}/static/img/howlongtobeat_thumbs`)
 ```
 
 It will print out games and metadata it found. Uses the cool [howlongtobeat npm package](https://www.npmjs.com/package/howlongtobeat) to do its dirty work. 
