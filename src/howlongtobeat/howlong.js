@@ -31,6 +31,9 @@ async function loadPostsWithFrontMatter(postsDirectoryPath) {
 }
 
 async function downloadThumbnail(url, id, dir) {
+  if(url.startsWith('/')) {
+    url = `https://howlongtobeat.com${url}`
+  }
   console.log(`   --- downloading thumbnail ${url} of id ${id}...`)
   await pipeline(
     got.stream(url),
@@ -57,13 +60,20 @@ async function fillInHowLongToBeat(posts, downloadDir) {
 async function run(options) {
   const { postDir, downloadDir } = options
 
-  console.log(`-- SCANNING not yet processed articles in ${postDir} for game_name --`)
+  console.log(`-- SCANNING posts in ${postDir} for "game_name" key... --`)
   let posts = await loadPostsWithFrontMatter(postDir)
+  console.log(`   >> Found ${posts.length}`)
   posts = posts.filter(post => post.game && !post.howlongtobeat_id)
+  console.log(`   >> ToProcess: ${posts.length}`)
   await fillInHowLongToBeat(posts, downloadDir)
 
   for(post of posts) {
     let data = await fs.readFile(post.file, 'utf8')
+
+    // just in case it's there, do not duplicate keys!
+    data = data.replace(/howlongtobeat_id:(.*)\n/, '')
+    data = data.replace(/nhowlongtobeat_hrs:(.*)\n/, '')
+
     data = data.replace(/game_name:/, `howlongtobeat_id: ${post.howlongtobeat_id}\nhowlongtobeat_hrs: ${post.howlongtobeat}\ngame_name:`)
     console.log(`\tFound game ${post.game}, how long filling in: ${post.howlongtobeat} (id #${post.howlongtobeat_id})`)
     await fs.writeFile(post.file, data, 'utf8')
